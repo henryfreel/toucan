@@ -1,4 +1,4 @@
-var app = angular.module('App.controllers', ['ngRoute']);
+// var app = angular.module('canopyApp')
 
 app.controller('MainCtrl', ['$scope', '$location', function ($scope, $location) {
 
