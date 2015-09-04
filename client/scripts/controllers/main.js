@@ -1,0 +1,28 @@
+// var app = angular.module('canopyApp')
+
+app.controller('MainCtrl', ['$scope', '$location', '$auth', function ($scope, $location, $auth) {
+
+	$scope.test = "The app is working!";
+
+	$scope.isActive = function(route) {
+        return route === $location.path();
+    }
+
+    $scope.isAuthenticated = function() {
+      return $auth.isAuthenticated();
+    };
+
+    $scope.logout = function() {
+
+    	if (!$auth.isAuthenticated()) { return; }
+
+    	$auth.logout()
+    	  .then(function() {
+    	    // toastr.info('You have been logged out');
+    	    console.log(localStorage);
+    	    $location.path('/');
+    	  });
+
+    }
+
+}]);

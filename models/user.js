@@ -34,6 +34,7 @@ UserSchema.methods.comparePassword = function(password, done) {
   });
 };
 
+// EXPORT USER MODEL
+var User = mongoose.model('User', UserSchema);
+module.exports = User;
 
-// EXPORT POST MODEL
-mongoose.model('User', UserSchema);

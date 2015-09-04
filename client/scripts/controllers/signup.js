@@ -1,26 +1,22 @@
-app.controller('SignupCtrl', ['$scope', '$auth', function ($scope, $auth) {
+app.controller('SignupCtrl', ['$scope', '$auth', '$location', function ($scope, $auth, $location) {
 
 	$scope.authenticate = function(provider) {
 	  $auth.authenticate(provider);
 	};
 
-	$scope.user = {};
-	
-	app.controller('SignupCtrl', function($scope, $location, $auth, toastr) {
-	    $scope.signup = function() {
-	      $auth.signup($scope.user)
-	        .then(function() {
-	          $location.path('/login');
-	          toastr.info('You have successfully created a new account');
-	        })
-	        .catch(function(response) {
-	          toastr.error(response.data.message);
-	        });
-    };
+	// $scope.user = {};
 
-	$scope.signUp = function(){
-	    User.save($scope.user);
-	    $scope.user = {};
-	};
+    $scope.signup = function() {
+      $auth.signup($scope.user)
+        .then(function() {
+          $location.path('/');
+          // toastr.info('You have successfully created a new account');
+          console.log('You have successfully created a new account');
+        })
+        .catch(function(response) {
+          // toastr.error(response.data.message);
+          console.log(response.data.message)
+        });
+    };
 
 }]);

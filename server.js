@@ -7,6 +7,7 @@ var express = require('express'),
 var path = require('path');
 var cors = require('cors');
 var jwt = require('jwt-simple');
+var moment = require('moment');
 
 var config = require('./config.js');
 
@@ -31,22 +32,45 @@ app.get('*', function (req, res) {
   res.sendFile(__dirname + '/client/views/index.html');
 });
 
+/*
+ |--------------------------------------------------------------------------
+ | Login Required Middleware
+ |--------------------------------------------------------------------------
+ */
+function ensureAuthenticated(req, res, next) {
+  if (!req.headers.authorization) {
+    return res.status(401).send({ message: 'Please make sure your request has an Authorization header' });
+  }
+  var token = req.headers.authorization.split(' ')[1];
 
-app.post('/api/auth/login', function(req, res) {
-    console.log("logging in")
-    User.findOne({ email: req.body.email }, '+password', function(err, user) {
-      console.log(user)
-      if (!user) {
-        return res.status(401).send({ message: 'Wrong email and/or password' });
-      }
-      user.comparePassword(req.body.password, function(err, isMatch) {
-        if (!isMatch) {
-          return res.status(401).send({ message: 'Wrong email and/or password' });
-        }
-        res.send({ token: authHelpers.createJWT(user) });
-      });
-    });
-  });
+  var payload = null;
+  try {
+    payload = jwt.decode(token, config.TOKEN_SECRET);
+  }
+  catch (err) {
+    return res.status(401).send({ message: err.message });
+  }
+
+  if (payload.exp <= moment().unix()) {
+    return res.status(401).send({ message: 'Token has expired' });
+  }
+  req.user = payload.sub;
+  next();
+}
+
+/*
+ |--------------------------------------------------------------------------
+ | Generate JSON Web Token
+ |--------------------------------------------------------------------------
+ */
+function createJWT(user) {
+  var payload = {
+    sub: user._id,
+    iat: moment().unix(),
+    exp: moment().add(14, 'days').unix()
+  };
+  return jwt.encode(payload, config.TOKEN_SECRET);
+}
 
 /*
  |--------------------------------------------------------------------------
