@@ -4,14 +4,27 @@ var mongoose = require('mongoose'),
     salt = bcrypt.genSaltSync(10);
 
 var UserSchema = new mongoose.Schema({
-  created_at: { type: Date },
-  updated_at: { type: Date },
-  email: { type: String, unique: true, lowercase: true },
-  password: { type: String, select: false },
-  displayName: String,
-  picture: String,
-  github: String,
-  twitter: String,
+  created_at: { type: Date, default: Date.now },
+  updated_at: { type: Date, default: Date.now },
+
+  email: { type: String, unique: true, lowercase: true, required: true },
+  password: { type: String, select: false, required: true },
+  username: { type: String, unique: true, lowercase: true, required: true },
+
+  profilePicture: { type: String, default: ""},
+  firstName: { type: String, default: ""},
+  lastName: { type: String, default: ""},
+  bio: { type: String, default: ""},
+  location: { type: String, default: ""},
+  jobTitle: { type: String, default: ""},
+  company: { type: String, default: ""},
+  stack: { type: String, default: ""},
+
+  github: { type: String, default: ""},
+  codepen: { type: String, default: ""},
+  twitter: { type: String, default: ""},
+  linkedin: { type: String, default: ""}
+
 });
 
 UserSchema.pre('save', function(next) {

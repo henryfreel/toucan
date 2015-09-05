@@ -1,0 +1,269 @@
+/* - - - - - - - - Colors - - - - - - - - */
+/* - - - - - - - - Fonts - - - - - - - - */
+/* line 3, ../compass/sass/projects.scss */
+.page-header {
+  border: none;
+  height: 32px;
+  margin-top: 0px;
+}
+
+/* line 10, ../compass/sass/projects.scss */
+.projects-container {
+  margin-top: 30px;
+}
+
+/* line 14, ../compass/sass/projects.scss */
+.page-header > h3 {
+  display: inline-block;
+  margin: 0;
+  color: #404040;
+}
+
+/* line 20, ../compass/sass/projects.scss */
+.sort-by {
+  float: right;
+}
+
+/* line 24, ../compass/sass/projects.scss */
+.sort-by > button {
+  background-color: #FFFFFF;
+  border: 1px solid #BBBBBB;
+  margin-top: -5px;
+}
+
+/* line 30, ../compass/sass/projects.scss */
+.project-preview-container {
+  padding-bottom: 30px;
+}
+
+/* line 34, ../compass/sass/projects.scss */
+.project-preview-content {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05);
+  padding: 0px;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  overflow: hidden;
+}
+
+/* line 43, ../compass/sass/projects.scss */
+.project-preview-content a {
+  text-decoration: none;
+}
+
+/* line 47, ../compass/sass/projects.scss */
+.project-preview-content a:hover {
+  color: #4CA619;
+  font-weight: 500;
+}
+
+/* line 52, ../compass/sass/projects.scss */
+.project-preview-content:hover {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* line 56, ../compass/sass/projects.scss */
+.project-preview-title-container {
+  padding: 10px;
+}
+
+/* line 60, ../compass/sass/projects.scss */
+.project-preview-title {
+  display: block;
+  font-size: 15px;
+  font-weight: 400;
+  color: #666666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* line 70, ../compass/sass/projects.scss */
+.project-preview-image {
+  height: 165px;
+  width: 100%;
+  background-size: cover;
+  background-position: center top;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #EFEFEF;
+  border-top: 1px solid #EFEFEF;
+}
+
+/* line 81, ../compass/sass/projects.scss */
+.project-preview-info {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 0;
+  padding-bottom: 10px;
+}
+
+/* line 91, ../compass/sass/projects.scss */
+.project-preview-icon {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 400;
+  color: #BBBBBB;
+  margin-top: 2px;
+  margin-bottom: 0px;
+  margin-left: 8px;
+  float: right;
+}
+
+/* line 103, ../compass/sass/projects.scss */
+.project-preview-icon .fa {
+  color: #BBBBBB;
+}
+
+/* line 107, ../compass/sass/projects.scss */
+.project-preview-icon .fa-eye {
+  font-size: 18px;
+}
+
+/* line 111, ../compass/sass/projects.scss */
+.heart-selected {
+  color: #4CA619;
+}
+
+/* line 115, ../compass/sass/projects.scss */
+.project-preview-user {
+  height: 25px;
+}
+
+/* line 120, ../compass/sass/projects.scss */
+.project-preview-avatar {
+  background-size: cover;
+  background-position: center;
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  border: 1px solid #EFEFEF;
+}
+
+/* line 130, ../compass/sass/projects.scss */
+.project-preview-username {
+  color: #666666;
+  font-weight: 400;
+  font-size: 12px;
+  display: inline-block;
+  margin-left: 5px;
+  position: relative;
+  top: -8px;
+}
+
+/* - - - - - - - - Projects Page - - - - - - - - */
+/* line 146, ../compass/sass/projects.scss */
+.project-view-item {
+  display: block;
+  margin: 0px 0 8px 0;
+}
+
+/* line 151, ../compass/sass/projects.scss */
+.project-view-title {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+/* line 159, ../compass/sass/projects.scss */
+.project-view-avatar {
+  height: 30px;
+  width: 30px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05);
+  display: inline-block;
+}
+
+/* line 170, ../compass/sass/projects.scss */
+.project-view-username {
+  padding: 0px 0 10px 0;
+  font-size: 14px;
+  font-weight: 400;
+  display: inline-block;
+  padding: 0px;
+  padding-left: 5px;
+  margin: 0px;
+  position: relative;
+  top: -9px;
+}
+
+/* line 182, ../compass/sass/projects.scss */
+.project-view-username > a {
+  color: #404040;
+}
+
+/* line 186, ../compass/sass/projects.scss */
+.project-view-link {
+  white-space: nowrap;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* line 193, ../compass/sass/projects.scss */
+.project-view-link > a {
+  font-weight: 400;
+  color: #404040;
+}
+
+/* line 198, ../compass/sass/projects.scss */
+.project-view-github {
+  white-space: nowrap;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* line 205, ../compass/sass/projects.scss */
+.project-view-github > a {
+  font-weight: 400;
+  color: #404040;
+}
+
+/* line 210, ../compass/sass/projects.scss */
+.project-view-like {
+  display: inline-block;
+  font-size: 13px;
+  color: #404040;
+  font-weight: 400;
+  display: inline-block;
+}
+
+/* line 218, ../compass/sass/projects.scss */
+.project-view-like-counter {
+  display: inline-block;
+  float: right;
+  font-size: 13px;
+  color: #BBBBBB;
+  font-weight: 400;
+}
+
+/* line 226, ../compass/sass/projects.scss */
+.project-view-bio {
+  margin-top: 15px;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+/* line 232, ../compass/sass/projects.scss */
+.edit-project-button {
+  margin-top: 15px;
+}
+
+/* line 236, ../compass/sass/projects.scss */
+.btn-secondary.delete-project-button {
+  margin-top: 15px;
+  color: #FAFAFA;
+  background-color: #A74848;
+}
+
+/* line 242, ../compass/sass/projects.scss */
+.btn-secondary.delete-project-button:hover {
+  margin-top: 15px;
+  color: #FAFAFA;
+  background-color: #7E2E2E;
+}

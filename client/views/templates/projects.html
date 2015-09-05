@@ -1,0 +1,37 @@
+<div class="container projects-container">
+  <div class="row">
+
+  	<!-- <div class="col-md-12 page-header">
+  	</div> -->
+
+    <div ng-repeat="project in projects | orderBy: '-likes' " class="col-xs-3 project-preview-container">
+      <div class="project-preview-content">
+
+      	<!-- <div class="project-preview-title-container">
+      		<a class="project-preview-title" href="#">{{ project.title }}</a>
+      	</div> -->
+
+        <a href="#"><div class="project-preview-image" style="background-image: url(../images/{{ project.image }});"></div></a>
+
+        <div class="project-preview-info">
+
+            <div class="project-preview-icon">
+                <span class="fa fa-heart heart-unselected" aria-hidden="true"></span><span class="like-project-text"></span>
+                {{ project.likes }}
+            </div>
+            <div class="project-preview-icon">
+                <span class="fa fa-eye fa-lg heart-unselected" aria-hidden="true"></span><span class="like-project-text"></span>
+                {{ project.views }}
+            </div>
+
+        	<div class="project-preview-user">
+            	<div class="project-preview-avatar" style="background-image: url(images/default.png);"></div>
+            	<a href="#"><div class="project-preview-username">Username</div></a>
+            </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

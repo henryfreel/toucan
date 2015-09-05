@@ -9,6 +9,8 @@ app.controller('MainCtrl', ['$scope', '$location', '$auth', function ($scope, $l
     }
 
     $scope.isAuthenticated = function() {
+      // console.log("is authenitcated fired");
+      // console.log($auth.isAuthenticated());
       return $auth.isAuthenticated();
     };
 

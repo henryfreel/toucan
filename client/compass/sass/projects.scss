@@ -1,0 +1,246 @@
+@import 'styles';
+
+.page-header {
+	border: none;
+	height: 32px;
+	// background-color:red;
+	margin-top: 0px;
+}
+
+.projects-container {
+	margin-top: 30px;
+}
+
+.page-header > h3 {
+	display: inline-block;
+	margin:0;
+	color: $grey-dark;
+}
+
+.sort-by {
+	float: right;
+}
+
+.sort-by > button {
+	background-color: $white;
+	border: 1px solid $grey;
+	margin-top: -5px;
+}
+
+.project-preview-container {
+	padding-bottom: 30px;
+}
+
+.project-preview-content {
+	// border: 1px solid $grey;
+	box-shadow: $box-shadow;
+	padding: 0px;
+	border-radius: $border-radius;
+	background-color: $white;
+	overflow: hidden;
+}
+
+.project-preview-content a {
+	text-decoration: none;
+}
+
+.project-preview-content a:hover {
+	color: $primary-color;
+	font-weight: 500;
+}
+
+.project-preview-content:hover {
+	box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+}
+
+.project-preview-title-container {
+	padding: 10px;
+}
+
+.project-preview-title {
+	display: block;
+	font-size: 15px;
+	font-weight: 400;
+	color: $grey-medium;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.project-preview-image {
+	height: 165px;
+	width: 100%;
+	background-size: cover;
+	background-position:center top;
+	margin-bottom: 10px;
+	border-bottom: 1px solid $grey-light;
+	border-top: 1px solid $grey-light;
+	// border-radius: $border-radius;
+}
+
+.project-preview-info {
+	width: 100%;
+	// height: 80px;
+	// background-color:red;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 0;
+	padding-bottom: 10px;
+}
+
+.project-preview-icon {
+	display: inline-block;
+	// background-color: red;
+	font-size: 13px;
+	font-weight: 400;
+	color: $grey;
+	margin-top: 2px;
+	margin-bottom: 0px;
+	margin-left: 8px;
+	float: right;
+}
+
+.project-preview-icon .fa {
+	color: $grey;
+}
+
+.project-preview-icon .fa-eye {
+	font-size: 18px;
+}
+
+.heart-selected {
+	color: $primary-color;
+}
+
+.project-preview-user {
+	height: 25px;
+	// background-color: red;
+}
+
+.project-preview-avatar {
+	background-size: cover;
+	background-position: center;
+	display: inline-block;
+	height: 25px;
+	width: 25px;
+	border-radius: 50%;
+	border: 1px solid $grey-light;
+}
+
+.project-preview-username {
+	color: $grey-medium;
+	font-weight: 400;
+	font-size: 12px; 
+	display: inline-block;
+	margin-left: 5px;
+	position: relative;
+	top: -8px;
+}
+
+/* - - - - - - - - Projects Page - - - - - - - - */
+
+.project-view-container {
+	// background-color: $white;
+}
+
+.project-view-item {
+	display: block;
+	margin: 0px 0 8px 0;
+}
+
+.project-view-title {
+	// padding: 0px 0 10px 0;
+	font-size: 18px;
+	font-weight: 500;
+	margin-bottom: 15px;
+	line-height: 1.3;
+}
+
+.project-view-avatar {
+	height: 30px;
+	width: 30px;
+	background-position: center;
+	background-size: cover;
+	border-radius: 50%;
+	border: 2px solid $white;
+	box-shadow: $box-shadow;
+	display: inline-block;
+}
+
+.project-view-username {
+	padding: 0px 0 10px 0;
+	font-size: 14px;
+	font-weight: 400;
+	display: inline-block;
+	padding: 0px;
+	padding-left: 5px;
+	margin: 0px;
+	position: relative;
+	top: -9px;
+}
+
+.project-view-username > a {
+	color: $grey-dark;
+}
+
+.project-view-link {
+	white-space: nowrap;
+	font-size: 13px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.project-view-link > a {
+	font-weight: 400;
+	color: $grey-dark;
+}
+
+.project-view-github {
+	white-space: nowrap;
+	font-size: 13px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.project-view-github > a {
+	font-weight: 400;
+	color: $grey-dark;
+}
+
+.project-view-like {
+	display: inline-block;
+	font-size: 13px;
+	color: $grey-dark;
+	font-weight: 400;
+	display: inline-block;
+}
+
+.project-view-like-counter {
+	display: inline-block;
+	float: right;
+	font-size: 13px;
+	color: $grey;
+	font-weight: 400;
+}
+
+.project-view-bio {
+	margin-top: 15px;
+	font-size: 13px;
+	font-weight: 300;
+}
+
+.edit-project-button {
+	margin-top: 15px;
+}
+
+.btn-secondary.delete-project-button {
+	margin-top: 15px;
+	color: $grey-lightest;
+	background-color: #A74848;
+}
+
+.btn-secondary.delete-project-button:hover {
+	margin-top: 15px;
+	color: $grey-lightest;
+	background-color: #7E2E2E;
+}

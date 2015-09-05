@@ -72,6 +72,36 @@ function createJWT(user) {
   return jwt.encode(payload, config.TOKEN_SECRET);
 }
 
+
+/*
+ |--------------------------------------------------------------------------
+ | GET /api/me
+ |--------------------------------------------------------------------------
+ */
+app.get('/api/me', ensureAuthenticated, function(req, res) {
+  User.findById(req.user, function(err, user) {
+    res.send(user);
+  });
+});
+
+/*
+ |--------------------------------------------------------------------------
+ | PUT /api/me
+ |--------------------------------------------------------------------------
+ */
+app.put('/api/me', ensureAuthenticated, function(req, res) {
+  User.findById(req.user, function(err, user) {
+    if (!user) {
+      return res.status(400).send({ message: 'User not found' });
+    }
+    user.username = req.body.username || user.username;
+    user.email = req.body.email || user.email;
+    user.save(function(err) {
+      res.status(200).end();
+    });
+  });
+});
+
 /*
  |--------------------------------------------------------------------------
  | Log in with Email
@@ -97,19 +127,22 @@ app.post('/auth/login', function(req, res) {
  |--------------------------------------------------------------------------
  */
 app.post('/auth/signup', function(req, res) {
-  User.findOne({ email: req.body.email }, function(err, existingUser) {
-    if (existingUser) {
-      return res.status(409).send({ message: 'Email is already taken' });
-    }
-    var user = new User({
-      displayName: req.body.displayName,
-      email: req.body.email,
-      password: req.body.password
-    });
-    user.save(function() {
-      res.send({ token: createJWT(user) });
-    });
-  });
+ User.findOne({ email: req.body.email }, function(err, existingUser) {
+   if (existingUser) {
+     return res.status(409).send({ message: 'Email is already taken' });
+   }
+   var user = new User({
+     username: req.body.username,
+     email: req.body.email,
+     password: req.body.password
+   });
+   console.log(user);
+   user.save(function() {
+     console.log("--> user saved");
+     console.log(user);
+     res.send({ token: createJWT(user) });
+   });
+ });
 });
 
 

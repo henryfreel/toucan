@@ -8,13 +8,13 @@ app.config(['$routeProvider', '$locationProvider', '$authProvider', function ($r
         	templateUrl: 'views/templates/main.html',
         	controller: 'MainCtrl'
         })
-        .when('/first-page', {
-        	templateUrl: 'views/templates/first-page.html',
-        	controller: 'FirstPageCtrl'
+        .when('/projects', {
+        	templateUrl: 'views/templates/projects.html',
+        	controller: 'ProjectsPageCtrl'
         })
-        .when('/second-page', {
-        	templateUrl: 'views/templates/second-page.html',
-        	controller: 'SecondPageCtrl'
+        .when('/profile', {
+            templateUrl: 'views/templates/profile-page.html',
+            controller: 'ProfilePageCtrl'
         })
         .when('/login', {
             templateUrl: 'views/templates/login.html',

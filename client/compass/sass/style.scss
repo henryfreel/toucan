@@ -1,143 +1,236 @@
 @import 'compass/css3';
-
-.shadow {
-    @include box-shadow(#000 5px 5px 5px);
-}
+@import 'styles';
 
 body {
-  background-color: #d8d8d8;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  // font-family: 'Source Code Pro', sans-serif;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  padding-top: 70px;
+  background-color: $grey-light;
 }
 
-a {
-  color: #3f729b;
+/* - - - - - - - - Main Nav - - - - - - - - */
+
+#navbar {
+  background-color: $white;
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.05);
+  // box-shadow: 0px 0px 0px rgba(0,0,0,0.0);
 }
 
-a:hover {
-  color: #1c5380;
+.navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 0px;
 }
 
-.text-muted {
-  color: #90939a;
+#navbar-brand {
+  color: $grey-dark;
+  font-size: 21px;
+  height: 70px;
+  padding-top: 15px;
+  margin-right: 10px;
 }
 
-.navbar {
-  min-height: 50px;
-  border: 0;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+#navbar-logo {
+  display: inline-block;
+  /*position: relative;*/
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+  background-size: cover;
+  background-position: center;
+  background-image: image-url("logo-green.svg");
 }
 
-.navbar-header {
-  float: left;
-  padding-left: 15px;
-}
-
-.navbar-brand {
-  height: 50px;
-  padding: 0 15px;
-  font-size: inherit;
-  line-height: 50px;
-}
-
-.navbar-nav {
-  float: left;
-  margin: 0;
-}
-
-.navbar-nav > li {
-  float: left;
-}
-
-.navbar-nav > li > a {
-  padding: 0 15px;
-  line-height: 50px;
-}
-
-.navbar-text {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.center-form {
-  width: 315px;
-  margin: 10% auto;
-}
-
-.signup-or-separator {
+#navbar-name {
   position: relative;
-  height: 29px;
-  margin: 5px 0;
-  text-align: center;
-  background: none;
-}
-
-.signup-or-separator hr {
-  width: 90%;
-  margin: -16px auto 10px auto;
-  border-top: 1px solid #dce0e0;
-}
-
-.signup-or-separator .text {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  letter-spacing: -1px;
+  top: -13px; 
   display: inline-block;
-  padding: 8px;
-  margin: 0;
-  background-color: #fff;
 }
 
-.has-feedback .form-control-feedback {
-  top: 0;
-  left: 0;
-  width: 46px;
-  height: 46px;
-  line-height: 46px;
-  color: #555;
+.form-control:focus {   
+  border-color: rgba(76, 166, 25, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(76, 166, 25, 0.6);
+  outline: 0 none;
 }
 
-[class^='ion-'] {
-  font-size: 1.2em;
+.nav-links > li {
+  height: 70px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
-.has-feedback .form-control {
-  padding-left: 42px;
+.nav-links > li > a {
+  margin-top: 26px;
+  padding-top: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: $grey;
+  padding-left:0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
 }
 
-.btn-instagram {
-  color: #fff;
-  background-color: #517fa4;
-  border: 1px solid #456c8c;
+.nav-links > li > a:hover {
+  background-color: $white;
+  color: $grey-darkest;
 }
 
-.btn-instagram:hover,
-.btn-instagram:focus {
-  color: #fff;
-  background-color: #303030;
+.nav-links > li > a:active {
+  background-color: $white;
+  color: $grey-darkest;
 }
 
-.media-object {
+.nav-links > li > a:focus {
+  background-color: $white;
+  color: $grey-darkest;
+}
+
+.nav-links > li.active > a {
+  color: $grey-darkest;
+}
+
+#navbar-right {
+  float: right;
+}
+
+#navbar .navbar-nav .open > a {
+  color: $grey-light;
+}
+
+.dropdown-toggle {
+  height: 70px;
+}
+
+#navbar-avatar {
+  height: 30px;
+  width: 30px;
+  background-size: cover;
+  background-position: center;
   display: inline-block;
-  width: 32px;
-  height: 32px;
+  position: relative;
+  margin:0;
+  padding:0;
+  margin-right: 8px;
+  margin-top: 5px;
+  margin-bottom:-10px;
+  border-radius: 50%;
 }
 
-.media-heading {
-  display: block;
-  margin: 0;
-  color: #3f729b;
+#navbar-username {
+  display: inline-block;
+  position: relative;
+  top: -1px;
 }
 
-.media-heading:hover {
-  color: #1c5380;
+.navbar .btn {
+  margin-top: 18px;
+  margin-left: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: $border-radius;
+  border: none;
 }
 
-.soften {
-  height: 1px;
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
-  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
-  background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
-  border: 0;
+.navbar .btn-primary {
+  background-color: $primary-color;
 }
 
-.thumbnail {
-  border: 0;
-  border-radius: 0;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, .04),0 1px 5px rgba(0, 0, 0, .1);
+.navbar .btn-primary:active, .navbar .btn-primary.active, .navbar .btn-primary:focus, {
+  background-color: $primary-color-dark;
+}
+
+.navbar .btn-default {
+  background-color: $grey-medium;
+}
+
+.navbar-nav > li > a.btn {
+  font-weight: 300;
+  font-size: 14px;
+  color: $white;
+}
+
+.navbar-nav > li > a.btn.btn-primary:hover {
+  color: $white;
+  background-color: $primary-color-dark;
+}
+
+.navbar-nav > li > a.btn.btn-default:hover {
+  color: #eeeeee;
+  background-color: $grey-dark;
+}
+
+/* - - - - - - - - Forms Active - - - - - - - - */
+
+#form-submit-button.active, .form-submit-button:active {
+  background-color: $primary-color-dark;
+}
+
+/* - - - - - - - - Dropdown Menu - - - - - - - - */
+
+.dropdown-menu {
+  min-width: 140px;
+}
+
+.navbar ul.dropdown-menu {
+  background-color: $grey-darkest;
+  border-color: $grey-darkest;
+}
+
+.navbar ul.dropdown-menu li a {
+  font-weight: 300;
+  color: $grey;
+}
+
+.navbar ul.dropdown-menu li:hover {
+  background-color: $grey-dark;
+}
+
+.navbar ul.dropdown-menu li a:hover {
+  background-color: $grey-darkest;
+  font-weight: 400;
+  color: $grey-lightest;
+}
+
+.navbar ul.dropdown-menu li a:hover > span { color: $grey-lightest; }
+
+.dropdown-menu .divider {
+    height: 1px;
+    margin: 6px 0;
+    overflow: hidden;
+    background-color: $grey-dark;
+}
+
+/* - - - - - - - - iFrame - - - - - - - - */
+
+iframe {
+  border: none;
+  background-color: $grey;
+  box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
+}
+
+pre {
+  font-size: 13px;
+    display: block;
+    padding: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: $snippet-bg;
+    border: 1px solid $snippet-bg;
+    border-radius: $border-radius;
 }
