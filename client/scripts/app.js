@@ -1,5 +1,5 @@
 // removed -> , 'App.controllers'
-var app = angular.module('canopyApp', ['ngRoute', 'ngMessages', 'satellizer']);
+var app = angular.module('tukanApp', ['ngRoute', 'ngMessages', 'satellizer']);
 
 app.config(['$routeProvider', '$locationProvider', '$authProvider', function ($routeProvider, $locationProvider, $authProvider) {
 

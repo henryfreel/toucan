@@ -1,4 +1,4 @@
-// var app = angular.module('canopyApp')
+// var app = angular.module('tukanApp')
 
 app.controller('MainCtrl', ['$scope', '$location', '$auth', function ($scope, $location, $auth) {
 

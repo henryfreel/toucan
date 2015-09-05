@@ -17,7 +17,7 @@ var User = require('./models/user');
 mongoose.connect(
   process.env.MONGOLAB_URI ||
   process.env.MONGOHQ_URL ||
-  'mongodb://localhost/canopy'
+  'mongodb://localhost/tukan'
 );
 
 // configure body-parser
