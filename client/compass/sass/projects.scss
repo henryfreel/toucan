@@ -3,7 +3,6 @@
 .page-header {
 	border: none;
 	height: 32px;
-	// background-color:red;
 	margin-top: 0px;
 }
 
@@ -74,7 +73,7 @@
 	background-position:center top;
 	margin-bottom: 10px;
 	border-bottom: 1px solid $grey-light;
-	border-top: 1px solid $grey-light;
+	// border-top: 1px solid $grey-light;
 	// border-radius: $border-radius;
 }
 
@@ -137,10 +136,16 @@
 	top: -8px;
 }
 
-/* - - - - - - - - Projects Page - - - - - - - - */
+/* - - - - - - - - Project Page - - - - - - - - */
 
 .project-view-container {
-	// background-color: $white;
+	margin-top: 30px;
+}
+
+.project-view-image-container {
+	height: 500px;
+	background-position: top center;
+	background-size: cover;
 }
 
 .project-view-item {

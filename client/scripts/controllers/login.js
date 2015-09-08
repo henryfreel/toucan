@@ -1,5 +1,5 @@
 
-app.controller('LoginCtrl', ['$scope', '$location', '$auth', function ($scope, $location, $auth) {
+app.controller('LoginCtrl', ['$rootScope','$scope', '$location', '$auth','$http', function ($rootScope, $scope, $location, $auth, $http) {
 
 	$scope.authenticate = function(provider) {
       $auth.authenticate(provider)
@@ -14,9 +14,18 @@ app.controller('LoginCtrl', ['$scope', '$location', '$auth', function ($scope, $
 
 	$scope.login = function() {
       $auth.login($scope.user)
-        .then(function() {
+        .then(function(response) {
           // toastr.success('You have successfully signed in');
-          $location.path('/');
+
+          $http.get('/api/me')
+            .then(function(response) {
+          
+              $rootScope.currentUser = response.data; 
+
+            }, function(response) {
+            });
+
+          $location.path('/profile');
         })
         .catch(function(response) {
           // toastr.error(response.data.message, response.status);

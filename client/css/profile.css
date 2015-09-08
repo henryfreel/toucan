@@ -1,0 +1,39 @@
+/* - - - - - - - - Colors - - - - - - - - */
+/* - - - - - - - - Styling - - - - - - - - */
+/* - - - - - - - - Images - - - - - - - - */
+/* line 4, ../compass/sass/profile.scss */
+#profile-jumbotron {
+  background-image: url(/images/profile-bg-2.png);
+}
+
+/* line 8, ../compass/sass/profile.scss */
+.profile-header {
+  text-align: center;
+}
+/* line 12, ../compass/sass/profile.scss */
+.profile-header .profile-image {
+  height: 130px;
+  width: 130px;
+  background-image: url(/images/henry.png);
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  border: 5px solid #FFFFFF;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05);
+  margin: auto;
+}
+/* line 24, ../compass/sass/profile.scss */
+.profile-header .profile-username {
+  font-size: 42px;
+  color: #FFFFFF;
+  font-weight: 700;
+  margin: auto;
+}
+/* line 31, ../compass/sass/profile.scss */
+.profile-header .profile-bio {
+  font-size: 18px;
+  color: #FFFFFF;
+  font-weight: 300;
+  width: 800px;
+  margin: auto;
+}

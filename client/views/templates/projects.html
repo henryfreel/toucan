@@ -1,8 +1,34 @@
+<div ng-if="!isAuthenticated()" id="welcome-jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 text-center">
+        <h1>Welcome to Tukan!</h1>
+        <p>Tukan is where developers can show off projects they've worked on in the detail they deserve.</p>
+        <ul class="jumbotron-buttons">
+          <li><a href="/about" class="btn btn-default">Learn More About Tukan</a></li>
+          <li><a href="/signup" class="btn btn-primary">Post your first project!</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 secondary-navigation-list-container">
+        <ul class="secondary-navigation-list">
+          <li class="secondary-navigation-item"><a class="active" href="javascript:void(0)">Popular</a></li>
+          <li class="secondary-navigation-item"><a href="javascript:void(0)">Recent</a></li>
+          <li class="secondary-navigation-item"><a href="javascript:void(0)">Following</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container projects-container">
   <div class="row">
-
-  	<!-- <div class="col-md-12 page-header">
-  	</div> -->
 
     <div ng-repeat="project in projects | orderBy: '-likes' " class="col-xs-3 project-preview-container">
       <div class="project-preview-content">
@@ -11,7 +37,11 @@
       		<a class="project-preview-title" href="#">{{ project.title }}</a>
       	</div> -->
 
-        <a href="#"><div class="project-preview-image" style="background-image: url(../images/{{ project.image }});"></div></a>
+        <a href="/projects/{{ project._id }}"><div class="project-preview-image" style="background-image: url(../images/{{ project.image }});"></div></a>
+
+        <!-- <div class="project-preview-info">
+          <p>{{ project.description }}</p>
+        </div> -->
 
         <div class="project-preview-info">
 

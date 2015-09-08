@@ -3,32 +3,43 @@
 
 // $primary-color: #769842;
 // $primary-color: #4BAC1B;
-$primary-color: #4CA619;
-$primary-color-light: #A3C273;
+// $primary-color: #4CA619;
+$primary-color: #3EB900;
+$primary-color-light: #72C542;
 $primary-color-dark: #357411;
 
 $snippet-bg:#303B28;
+$body-bg: #EFEFEF;
 
-// $secondary-color: red;
-// $secondary-color-light: red;
-// $secondary-color-dark: red;
+$red: #E7050B;
+$red-light: #FF353C;
+$red-dark: #A0060B;
 
-$warning: #D9971D;
-$danger: #AA3535;
+$blue: #1761C1;
+$blue-light: #2F89FF;
+$blue-dark: #0F4385;
+
+$orange: #FFA600;
+$orange-light: #FFC250;
+$orange-dark: #C58000;
 
 $grey-lightest: #FAFAFA;
 $grey-light: #EFEFEF;
-$grey: #BBBBBB;
+$grey: #C4C4C4;
 $grey-medium: #666666;
 // $grey-dark:#383E34;
 $grey-dark:#404040;
-$grey-darkest: #282F28;
+$grey-darkest: #212721;
 
 $white:#FFFFFF;
 
-/* - - - - - - - - Fonts - - - - - - - - */
+/* - - - - - - - - Styling - - - - - - - - */
 
 $border-radius: 3px;
 
 $box-shadow:  0px 0px 5px rgba(0,0,0,0.05);
 // $box-shadow:  0px 0px 2px rgba(0,0,0,0.0);
+
+/* - - - - - - - - Images - - - - - - - - */
+
+$profile-header-img: image-url('/images/profile-bg-2.png', false, false);

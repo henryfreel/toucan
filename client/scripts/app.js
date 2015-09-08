@@ -4,17 +4,13 @@ var app = angular.module('tukanApp', ['ngRoute', 'ngMessages', 'satellizer']);
 app.config(['$routeProvider', '$locationProvider', '$authProvider', function ($routeProvider, $locationProvider, $authProvider) {
 
     $routeProvider.
-    	when('/', {
-        	templateUrl: 'views/templates/main.html',
-        	controller: 'MainCtrl'
-        })
-        .when('/projects', {
+        when('/projects', {
         	templateUrl: 'views/templates/projects.html',
         	controller: 'ProjectsPageCtrl'
         })
-        .when('/profile', {
-            templateUrl: 'views/templates/profile-page.html',
-            controller: 'ProfilePageCtrl'
+        .when('/projects/:id', {
+            templateUrl: '/views/templates/project.html',
+            controller: 'ProjectPageCtrl'
         })
         .when('/login', {
             templateUrl: 'views/templates/login.html',
@@ -24,12 +20,12 @@ app.config(['$routeProvider', '$locationProvider', '$authProvider', function ($r
             templateUrl: 'views/templates/signup.html',
             controller: 'SignupCtrl'
           })
-        // .when('/logout', {
-        //     templateUrl: 'views/templates/signup.html',
-        //     controller: 'LogoutCtrl'
-        //   })
+        .when('/:id', {
+            templateUrl: 'views/templates/profile-page.html',
+            controller: 'ProfilePageCtrl'
+        })
         .otherwise({
-        	redirectTo: '/'
+        	redirectTo: '/projects'
         });
  
     $authProvider.github({
@@ -46,5 +42,6 @@ app.config(['$routeProvider', '$locationProvider', '$authProvider', function ($r
 	  enabled: true,
 	  requireBase: false
 	});
+
 
 }]);

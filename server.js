@@ -27,11 +27,6 @@ app.use(bodyParser.json());
 // set location for static files
 app.use(express.static(__dirname + '/client'));
 
-// load public/index.html file (angular app)
-app.get('*', function (req, res) {
-  res.sendFile(__dirname + '/client/views/index.html');
-});
-
 /*
  |--------------------------------------------------------------------------
  | Login Required Middleware
@@ -136,18 +131,74 @@ app.post('/auth/signup', function(req, res) {
      email: req.body.email,
      password: req.body.password
    });
-   console.log(user);
    user.save(function() {
-     console.log("--> user saved");
-     console.log(user);
      res.send({ token: createJWT(user) });
    });
  });
 });
 
 
+/*
+ |--------------------------------------------------------------------------
+ | Find Specific User for profile
+ |--------------------------------------------------------------------------
+ */
+app.get('/api/users/:username', function (req, res) {
+
+  var targetUser = req.params.username;
+  console.log("--> this is the req.params on server")
+  console.log(targetUser);
+
+  User.findOne({username: targetUser}, function (err, foundUser) {
+
+    console.log("--> this is the foundUser");
+    console.log(foundUser);
+    res.json(foundUser);
+
+  });
+
+});
+
+
+
+
+
+/*
+ |--------------------------------------------------------------------------
+ | Nothing below here!
+ |--------------------------------------------------------------------------
+ */
+
+// load public/index.html file (angular app)
+app.get('*', function (req, res) {
+  res.sendFile(__dirname + '/client/views/index.html');
+});
 
 // listen on port 3000
 app.listen(process.env.PORT || 3000, function () {
   console.log('server started on localhost:3000');
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

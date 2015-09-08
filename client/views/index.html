@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Tukan</title>
+	<title>&nbsp;Toucan | Share your code</title>
 
 	<link rel="shortcut icon" href="images/favicon.ico">
 
@@ -12,9 +12,10 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 	<!-- Custom CSS -->
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/projects.css">
-	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/projects.css">
+	<link rel="stylesheet" href="/css/profile.css">
+	<link rel="stylesheet" href="/css/normalize.css">
 
 	<!-- Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
@@ -38,15 +39,13 @@
 
 	<!-- Angular -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
-
 	<!-- Angular Route -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.min.js"></script>
-
 	<!-- Angular Messaging -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-messages.min.js"></script>
 
 	<!-- Script Source -->
-	<script src="vendor/satellizer.js"></script>
+	<script src="/vendor/satellizer.js"></script>
 	<script type="text/javascript" src="/scripts/app.js"></script>
 	<script type="text/javascript" src="/scripts/controllers/main.js"></script>
 	<script type="text/javascript" src="/scripts/controllers/login.js"></script>
@@ -55,9 +54,9 @@
 	<script type="text/javascript" src="/scripts/controllers/profile.js"></script>
 
 </head>
-<body ng-controller="MainCtrl">
+<body ng-controller="MainCtrl" class="{{ pageClass }}">
 
-	<div ng-include src=" 'views/templates/navbar.html' "></div>
+	<div ng-include src=" '/views/templates/navbar.html' "></div>
 
  	<div ng-view></div>
 
