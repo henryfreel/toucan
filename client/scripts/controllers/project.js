@@ -1,30 +1,28 @@
-app.controller('ProjectPageCtrl', ['$rootScope', '$scope', '$location','$route', '$routeParams',function ($rootScope, $scope, $location, $route, $routeParams) {
+app.controller('ProjectPageCtrl', ['$rootScope', '$scope', '$location', '$routeParams', '$http', function ($rootScope, $scope, $location, $routeParams, $http) {
 
-	// $rootScope.pageClass = "white-page";
+	$scope.project = {};
 
-	// var projectId = $routeParams.id
-	// var projectId = $routeParams.id
-	$scope.project = { 
-		_id: 1,
-		title: 'Belay Me', 
-		liveUrl: 'http://project-canopy.herokuapp.com/',
-		image: 'project-1.png',
-		githubUrl: 'https://github.com/henryfreel/canopy',
-		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi volutpat leo quam, a aliquam lacus tempus non. Curabitur vel nisl congue, tempor erat in, finibus justo. Aliquam erat volutpat. Aliquam hendrerit erat nec turpis consectetur, in suscipit elit fermentum. Suspendisse potenti. Aliquam eget scelerisque massa. Duis aliquam orci vel nibh dapibus tristique. Nunc dapibus blandit lorem vel vulputate. Duis aliquam tempor turpis a lobortis. Phasellus eget interdum urna.',
-		likes: 9,
-		views: 24,
-		snippet: ''
+	$scope.newProject = function() {
+
+		$scope.project.user = $rootScope.currentUser
+
+		console.log("--> New Project submitted by...");
+		console.log($scope.project.user);
+	    
+		$http.post('/api/projects/new', $scope.project)
+			.then(function(response) {
+					
+				$scope.book = {};
+
+			}, function(response) {
+			});
+
 	};
-
-	// $scope.$on('$locationChangeSuccess', function() {
-	//     // var path = $location.path();
-	//     $rootScope.pageClass = "white-page";
-	// });
 
 
 }]);
 
-app.controller('ProjectsPageCtrl', ['$scope', '$route',function ($scope, $route) {
+app.controller('ProjectsPageCtrl', ['$scope',function ($scope) {
 
 	$scope.project = "huh?";
 

@@ -16,7 +16,7 @@
           <ul id="navbar-right" class="nav navbar-nav">
 
             <li ng-if="isAuthenticated()" class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><div id="navbar-avatar" style="background-image: url(images/henry.png);"></div><div id="navbar-username">{{ currentUser.username }}</div></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><div id="navbar-avatar" style="background-image: url(/images/{{ currentUser.profilePicture }});"></div><div id="navbar-username">{{ currentUser.username }}</div></a>
                 <ul class="dropdown-menu pull-right">
                   <li><a href="/profile"><span class="fa fa-user fa-fw profile-info-icon"></span> Profile</a></li>
                   <li><a href="/"><span class="fa fa-cog fa-fw profile-info-icon"></span> Settings</a></li>
@@ -27,19 +27,19 @@
                 
               <li><a ng-if="isAuthenticated()" class="btn btn-primary" href="/projects/new"><span class="fa fa-leaf" aria-hidden="true"></span> &nbspNew Project</a></li>
 
-              <li><a ng-if="!isAuthenticated()" href="/login" class="btn btn-default">Log in</a></li>
-              <!-- <li><a ng-if="!isAuthenticated()" href="/signup" class="btn btn-primary">Sign up</a></li> -->
+              <li><a ng-if="!isAuthenticated()" href="/signup" class="btn btn-default">Sign up</a></li>
+              <li><a ng-if="!isAuthenticated()" href="/login" class="btn btn-secondary">Log in</a></li>
 
             </ul>
 
-            <div id="nav-search-bar">
+            <!-- <div id="nav-search-bar">
               <form class="navbar-form" role="search">
                 <div class="form-group">
                   <span class="input-addon"><span class="fa fa-search" aria-hidden="true"></span></span>
                   <input type="text" class="form-control" placeholder="Search for projects, developers...">
                 </div>
               </form>
-            </div>
+            </div> -->
 
       </div>
   </nav> 

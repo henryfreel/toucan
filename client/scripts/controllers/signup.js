@@ -6,25 +6,36 @@ app.controller('SignupCtrl', ['$scope', '$auth', '$location', function ($scope, 
 
 	$scope.user = {};
 
-    $scope.signup = function() {
-      $auth.signup($scope.user)
-        .then(function() {
-          // $location.path('/login');
-          console.log('You have successfully created a new account');
+  $scope.signup = function() {
+    $auth.signup($scope.user)
+      .then(function() {
+        // $location.path('/login');
+        // console.log('You have successfully created a new account');
 
-          $auth.login($scope.user)
-            .then(function() {
-              // toastr.success('You have successfully signed in');
-              $location.path('/profile');
-            })
-            .catch(function(response) {
-              // toastr.error(response.data.message, response.status);
-            });
+        $auth.login($scope.user)
+          .then(function() {
+            // toastr.success('You have successfully signed in');
 
-        })
-        .catch(function(response) {
-          console.log(response.data.message)
-        });
-    };
+            $http.get('/api/me')
+              .then(function(response) {
+            
+                $rootScope.currentUser = response.data; 
+
+              }, function(response) {
+              });
+
+            var userName = $rootScope.currentUser
+
+            $location.path('/' + userName);
+          })
+          .catch(function(response) {
+            // toastr.error(response.data.message, response.status);
+          });
+
+      })
+      .catch(function(response) {
+        console.log(response.data.message)
+      });
+  };
 
 }]);

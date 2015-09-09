@@ -3,20 +3,27 @@ var mongoose = require('mongoose'),
     bcrypt = require('bcrypt'),
     salt = bcrypt.genSaltSync(10);
 
+var User = require('./user');
+
 var ProjectSchema = new mongoose.Schema({
   created_at: { type: Date, default: Date.now },
   updated_at: { type: Date, default: Date.now },
 
-  title: { type: String, , required: true },
-  liveUrl: { type: String, unique: true, lowercase: true, required: true },
-  image: { type: String, default: ""},
+  title: { type: String, required: true },
+  liveUrl: { type: String, lowercase: true},
+  image: { type: String, default: "default-project.png"},
 
   githubUrl: { type: String, default: ""},
-  description: { type: String, default: ""},
+  description: { type: String, default: "", required: true },
   snippet: { type: String, default: ""},
 
   likes: { type: Number, default: 0},
-  views: { type: Number, default: 0}
+  views: { type: Number, default: 0},
+
+  user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+      }
 
 });
 

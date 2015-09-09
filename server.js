@@ -12,12 +12,13 @@ var moment = require('moment');
 var config = require('./config.js');
 
 var User = require('./models/user');
+var Project = require('./models/project');
 
 // connect to mongodb
 mongoose.connect(
   process.env.MONGOLAB_URI ||
   process.env.MONGOHQ_URL ||
-  'mongodb://localhost/tukan'
+  'mongodb://localhost/toucan'
 );
 
 // configure body-parser
@@ -146,18 +147,79 @@ app.post('/auth/signup', function(req, res) {
 app.get('/api/users/:username', function (req, res) {
 
   var targetUser = req.params.username;
-  console.log("--> this is the req.params on server")
-  console.log(targetUser);
 
   User.findOne({username: targetUser}, function (err, foundUser) {
 
-    console.log("--> this is the foundUser");
-    console.log(foundUser);
-    res.json(foundUser);
+    if (foundUser) {
+      res.json(foundUser);
+    } else {
+      res.status(404).send('Sorry cant find that!');
+      // res.redirect('/views/404.html')
+    }
 
   });
 
 });
+
+
+/*
+ |--------------------------------------------------------------------------
+ | Create New Project
+ |--------------------------------------------------------------------------
+ */
+app.post('/api/projects/new', function (req, res) {
+
+  var newProject = new Project(req.body)
+
+  newProject.save( function (err, savedProject) {
+
+    // res.json(savedProject);
+
+    var userId = savedProject.user
+
+    console.log("--> This is the Id of the user who created the newProject");
+    console.log(userId);
+
+    User.findOne({_id: userId}).exec(function (err, foundUser) {
+
+      
+
+    });
+
+  })
+
+  // User.findOne({_id: req.session.userId}).exec(function (err, foundUser) {
+
+  //     console.log('--> this is the current user');
+  //     console.log(foundUser.email);
+
+  //     var newList = new List(req.body);
+
+  //     newList.author = foundUser;
+
+  //     newList.save(function (err, savedList) {
+
+  //       console.log('--> list array before push');
+  //       console.log(foundUser.lists);
+
+  //       // add newList to `lists` array
+  //       foundUser.lists.push(savedList);
+
+  //       foundUser.save(function (err, savedUser) {
+  //         // send newList as JSON response
+  //         res.json(savedList);
+  //       });
+
+  //       console.log('--> list array after push');
+  //       console.log(foundUser.lists);
+
+  //     });
+
+  // }); 
+
+});
+
+
 
 
 

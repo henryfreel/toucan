@@ -20,12 +20,14 @@ app.controller('LoginCtrl', ['$rootScope','$scope', '$location', '$auth','$http'
           $http.get('/api/me')
             .then(function(response) {
           
-              $rootScope.currentUser = response.data; 
+              $rootScope.currentUser = response.data;
+
+              var loggedInUser = response.data.username
+              $location.path('/' + loggedInUser);
 
             }, function(response) {
             });
 
-          $location.path('/profile');
         })
         .catch(function(response) {
           // toastr.error(response.data.message, response.status);

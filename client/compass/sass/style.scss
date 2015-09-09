@@ -170,6 +170,8 @@ body {
   border: none;
 }
 
+// Primary Button
+
 .navbar .btn-primary {
   background-color: $primary-color;
 }
@@ -183,8 +185,28 @@ body {
 }
 
 .navbar .btn-primary:focus {
-  background-color: $primary-color;
+  background-color: $primary-color-dark;
 }
+
+// Secondary Button
+
+.navbar .btn-secondary {
+  background-color: $blue;
+}
+
+.navbar .btn-secondary:hover {
+  background-color: $blue-dark;
+}
+
+.navbar .btn-secondary:active {
+  background-color: $blue-dark;
+}
+
+.navbar .btn-secondary:focus {
+  background-color: $blue-dark;
+}
+
+// Default Button
 
 .navbar .btn-default {
   background-color: $grey-medium;
@@ -192,10 +214,17 @@ body {
 
 .navbar .btn-default:hover {
   background-color: $grey-dark;
+  color:$white;
 }
 
-.navbar .btn-default:active, .navbar .btn-default:focus{
-  background-color: $grey-medium;
+.navbar .btn-default:active {
+    background-color: $grey-dark;
+    color:$white;
+}
+
+.navbar .btn-default:focus {
+  background-color: $grey-dark;
+  color:$white;
 }
 
 // .navbar-nav > li > a.btn {
@@ -264,7 +293,7 @@ body {
 .navbar ul.dropdown-menu li a {
   font-size: 14px;
   font-weight: 400;
-  color: $grey;
+  color: $grey-medium;
 }
 
 .navbar ul.dropdown-menu li:hover {
@@ -297,8 +326,8 @@ body {
 
 #welcome-jumbotron {
   background-color: $grey-darkest;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 60px;
+  padding-bottom: 70px;
 }
 
 #welcome-jumbotron h1 {
@@ -403,9 +432,18 @@ body {
   color: $grey-dark;
 }
 
+/* - - - - - - - - Error Page - - - - - - - - */
 
+#error-jumbotron {
+  background-image: $profile-header-img;
+}
 
-
+.error-message {
+  margin-top: 15px;
+  font-size: 18px;
+  color: $white;
+  font-weight: 400;
+}
 
 
 

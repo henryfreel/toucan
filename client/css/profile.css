@@ -21,15 +21,17 @@
   border: 5px solid #FFFFFF;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05);
   margin: auto;
+  margin-bottom: 10px;
 }
-/* line 24, ../compass/sass/profile.scss */
+/* line 25, ../compass/sass/profile.scss */
 .profile-header .profile-username {
   font-size: 42px;
   color: #FFFFFF;
   font-weight: 700;
   margin: auto;
+  margin-bottom: 5px;
 }
-/* line 31, ../compass/sass/profile.scss */
+/* line 33, ../compass/sass/profile.scss */
 .profile-header .profile-bio {
   font-size: 18px;
   color: #FFFFFF;

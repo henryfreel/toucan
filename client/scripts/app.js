@@ -5,8 +5,12 @@ app.config(['$routeProvider', '$locationProvider', '$authProvider', function ($r
 
     $routeProvider.
         when('/projects', {
-        	templateUrl: 'views/templates/projects.html',
+        	templateUrl: '/views/templates/projects.html',
         	controller: 'ProjectsPageCtrl'
+        })
+        .when('/projects/new', {
+            templateUrl: '/views/templates/new-project.html',
+            controller: 'ProjectPageCtrl'
         })
         .when('/projects/:id', {
             templateUrl: '/views/templates/project.html',
@@ -17,11 +21,15 @@ app.config(['$routeProvider', '$locationProvider', '$authProvider', function ($r
             controller: 'LoginCtrl'
           })
         .when('/signup', {
-            templateUrl: 'views/templates/signup.html',
+            templateUrl: '/views/templates/signup.html',
             controller: 'SignupCtrl'
           })
+        .when('/404', {
+            templateUrl: '/views/404.html',
+            controller: 'MainCtrl'
+        })
         .when('/:id', {
-            templateUrl: 'views/templates/profile-page.html',
+            templateUrl: '/views/templates/profile-page.html',
             controller: 'ProfilePageCtrl'
         })
         .otherwise({

@@ -3,6 +3,8 @@ var mongoose = require('mongoose'),
     bcrypt = require('bcrypt'),
     salt = bcrypt.genSaltSync(10);
 
+var Project = require('./project');
+
 var UserSchema = new mongoose.Schema({
   created_at: { type: Date, default: Date.now },
   updated_at: { type: Date, default: Date.now },
@@ -11,11 +13,11 @@ var UserSchema = new mongoose.Schema({
   password: { type: String, select: false, required: true },
   username: { type: String, unique: true, lowercase: true, required: true },
 
-  profilePicture: { type: String, default: ""},
-  firstName: { type: String, default: ""},
-  lastName: { type: String, default: ""},
-  bio: { type: String, default: ""},
-  location: { type: String, default: ""},
+  profilePicture: { type: String, default: "default.png"},
+  firstName: { type: String, default: "First"},
+  lastName: { type: String, default: "Last"},
+  bio: { type: String, default: "Fullstack developer working at Toucan"},
+  location: { type: String, default: "San Francisco, CA"},
   jobTitle: { type: String, default: ""},
   company: { type: String, default: ""},
   stack: { type: String, default: ""},
@@ -23,7 +25,12 @@ var UserSchema = new mongoose.Schema({
   github: { type: String, default: ""},
   codepen: { type: String, default: ""},
   twitter: { type: String, default: ""},
-  linkedin: { type: String, default: ""}
+  linkedin: { type: String, default: ""},
+
+  projects: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Project'
+      }]
 
 });
 
