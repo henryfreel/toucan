@@ -28,6 +28,10 @@ app.config(['$routeProvider', '$locationProvider', '$authProvider', function ($r
             templateUrl: '/views/404.html',
             controller: 'MainCtrl'
         })
+        .when('/:id/edit', {
+            templateUrl: '/views/templates/edit-profile.html',
+            controller: 'ProfilePageCtrl'
+        })
         .when('/:id', {
             templateUrl: '/views/templates/profile.html',
             controller: 'ProfilePageCtrl'

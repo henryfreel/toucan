@@ -8,10 +8,14 @@ app.controller('NewProjectCtrl', ['$rootScope', '$scope', '$location', '$routePa
 	    
 		$http.post('/api/projects/new', $scope.project)
 			.then(function(response) {
-					
-				$scope.project = {};
+
+				var projectId = response.data._id
+				$location.path('/projects/' + projectId);
 
 			}, function(response) {
+
+				$location.path('/500');
+
 			});
 
 	};
@@ -33,6 +37,21 @@ app.controller('ProjectCtrl', ['$rootScope', '$scope', '$location', '$routeParam
 			$location.path('/404');
 
 		});
+
+	$scope.deleteProject = function (project) {
+
+		$http.delete('/api/projects/' + projectId, project)
+			.then(function(response) {
+
+				$location.path('/' + $rootScope.currentUser.username);
+
+			}, function(response) {
+
+				$location.path('/500');
+
+			});
+
+	}
 
 
 }]);

@@ -1,32 +1,32 @@
 <div class="col-sm-4 col-sm-offset-4">
+  <br>
   <legend>New Project</legend>
   <form method="post" ng-submit="newProject()" name="newProjectForm">
 
     <div class="form-group has-feedback" ng-class="{ 'has-error' : newProjectForm.title.$invalid && newProjectForm.title.$dirty }">
-      <input class="form-control input-lg" type="text" name="title" ng-model="project.title" placeholder="Project Title" required autofocus>
+      <input class="form-control input" type="text" name="title" ng-model="project.title" placeholder="Project Title" required autofocus>
       <span class="ion-folder form-control-feedback"></span>
-      <div class="help-block text-danger" ng-if="newProjectForm.username.$dirty" ng-messages="newProjectForm.username.$error">
+      <div class="help-block text-danger" ng-if="newProjectForm.title.$dirty" ng-messages="newProjectForm.title.$error">
         <div ng-message="required">You must enter a title.</div>
       </div>
     </div>
 
     <div class="form-group has-feedback" ng-class="{ 'has-error' : newProjectForm.liveUrl.$invalid && newProjectForm.liveUrl.$dirty }">
-      <input class="form-control input-lg" type="liveUrl" id="liveUrl" name="liveUrl" ng-model="project.liveUrl" placeholder="Live URL">
+      <input class="form-control input" type="liveUrl" id="liveUrl" name="liveUrl" ng-model="project.liveUrl" placeholder="Live URL">
       <span class="ion-earth form-control-feedback"></span>
-      <div class="help-block text-danger" ng-if="newProjectForm.title.$dirty" ng-messages="newProjectForm.title.$error">
-        <div ng-message="required">URL is required.</div>
+      <div class="help-block text-danger" ng-if="newProjectForm.liveUrl.$dirty" ng-messages="newProjectForm.liveUrl.$error">
         <div ng-message="pattern">URL is invalid.</div>
       </div>
     </div>
 
     <div class="form-group has-feedback" ng-class="{ 'has-error' : newProjectForm.description.$invalid && newProjectForm.description.$dirty }">
-      <input password-strength class="form-control input-lg" type="text" name="description" ng-model="project.description" placeholder="description" required>
+      <input password-strength class="form-control input" type="text" name="description" ng-model="project.description" placeholder="description" required>
       <span class="ion-document-text form-control-feedback"></span>
       <div class="help-block text-danger" ng-if="newProjectForm.description.$dirty" ng-messages="newProjectForm.description.$error">
         <div ng-message="required">Description is required.</div>
       </div>
     </div>
 
-    <button type="submit" ng-disabled="newProjectForm.$invalid" class="btn btn-lg btn-block btn-primary">Add Project</button>
+    <button type="submit" ng-disabled="newProjectForm.$invalid" class="btn btn-block btn-primary">Add Project</button>
   </form>
 </div>

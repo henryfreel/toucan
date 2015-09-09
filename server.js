@@ -129,15 +129,32 @@ app.get('/api/me', ensureAuthenticated, function(req, res) {
 // Edit User
 
 app.put('/api/me', ensureAuthenticated, function(req, res) {
-  User.findById(req.user, function(err, user) {
-    if (!user) {
+
+  User.findById(req.user, function(err, foundUser) {
+    if (!foundUser) {
       return res.status(400).send({ message: 'User not found' });
     }
-    user.username = req.body.username || user.username;
-    user.email = req.body.email || user.email;
-    user.save(function(err) {
+
+    foundUser.username = req.body.username || foundUser.username;
+
+    foundUser.firstName = req.body.firstName || foundUser.firstName;
+    foundUser.lastName = req.body.lastName || foundUser.lastName;
+    foundUser.profilePicture = req.body.profilePicture || foundUser.profilePicture;
+    foundUser.bio = req.body.bio || foundUser.bio;
+    foundUser.location = req.body.location || foundUser.location;
+    foundUser.jobTitle = req.body.jobTitle || foundUser.jobTitle;
+    foundUser.company = req.body.company || foundUser.company;
+    foundUser.stack = req.body.stack || foundUser.stack;
+
+    foundUser.github = req.body.github || foundUser.github;
+    foundUser.twitter = req.body.twitter || foundUser.twitter;
+    foundUser.codepen = req.body.codepen || foundUser.codepen;
+    foundUser.linkedin = req.body.linkedin || foundUser.linkedin;
+
+    foundUser.save(function(err) {
       res.status(200).end();
     });
+
   });
 });
 
@@ -169,7 +186,7 @@ app.get('/api/users/:id', function (req, res) {
 
 // New Project
 
-app.post('/api/projects/new', function (req, res) {
+app.post('/api/projects/new', ensureAuthenticated, function (req, res) {
 
   var newProject = new Project(req.body)
 
@@ -214,6 +231,27 @@ app.get('/api/projects/:id', function (req, res) {
   var targetProject = req.params.id;
 
   Project.findOne({_id: targetProject}, function (err, foundProject) {
+
+    if (foundProject) {
+
+      res.json(foundProject);
+
+    } else {
+      res.status(404).send('Sorry cant find that!');
+      // res.redirect('/views/404.html')
+    }
+
+  });
+
+});
+
+// Delete Project
+
+app.delete('/api/projects/:id', function (req, res) {
+
+  var targetProject = req.params.id;
+
+  Project.findOneAndRemove({_id: targetProject}, function (err, foundProject) {
 
     if (foundProject) {
 

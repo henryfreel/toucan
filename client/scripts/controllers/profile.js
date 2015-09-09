@@ -11,12 +11,25 @@ app.controller('ProfilePageCtrl', ['$scope', '$http','$routeParams', '$location'
 
 	  		$scope.projects = response.data.projects;
 
-	  		console.log(response.data.projects);
-
   		}, function(response) {
 
   			$location.path('/404');
   	});
+
+  	$scope.updateProfile = function (user) {
+
+	  	$http.put('/api/me', user)
+	  		.then(function(response) {
+
+		  		$location.path('/' + userName);
+
+
+	  		}, function(response) {
+
+	  			$location.path('/500');
+	  	});
+
+  	}
 
   	// $http.get('/api/users/' + userName + '/projects')
   	// 	.then(function(response) {
