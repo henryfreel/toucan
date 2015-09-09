@@ -1,4 +1,3 @@
-// removed -> , 'App.controllers'
 var app = angular.module('tukanApp', ['ngRoute', 'ngMessages', 'satellizer','ngSanitize']);
 
 app.config(['$routeProvider', '$locationProvider', '$authProvider', function ($routeProvider, $locationProvider, $authProvider) {

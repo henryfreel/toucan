@@ -11,21 +11,21 @@
       </div>
     </div>
 
-    <div class="form-group has-feedback" ng-class="{ 'has-error' : newProjectForm.liveUrl.$invalid && newProjectForm.liveUrl.$dirty }">
+    <!-- <div class="form-group has-feedback" ng-class="{ 'has-error' : newProjectForm.liveUrl.$invalid && newProjectForm.liveUrl.$dirty }">
       <input class="form-control input" type="liveUrl" id="liveUrl" name="liveUrl" ng-model="project.liveUrl" placeholder="Live URL">
       <span class="ion-earth form-control-feedback"></span>
       <div class="help-block text-danger" ng-if="newProjectForm.liveUrl.$dirty" ng-messages="newProjectForm.liveUrl.$error">
         <div ng-message="pattern">URL is invalid.</div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="form-group has-feedback" ng-class="{ 'has-error' : newProjectForm.description.$invalid && newProjectForm.description.$dirty }">
-      <input password-strength class="form-control input" type="text" name="description" ng-model="project.description" placeholder="description" required>
+    <!-- <div class="form-group has-feedback" ng-class="{ 'has-error' : newProjectForm.content.$invalid && newProjectForm.content.$dirty }">
+      <input password-strength class="form-control input" type="text" name="content" ng-model="project.content" placeholder="content">
       <span class="ion-document-text form-control-feedback"></span>
-      <div class="help-block text-danger" ng-if="newProjectForm.description.$dirty" ng-messages="newProjectForm.description.$error">
+      <div class="help-block text-danger" ng-if="newProjectForm.content.$dirty" ng-messages="newProjectForm.content.$error">
         <div ng-message="required">Description is required.</div>
       </div>
-    </div>
+    </div> -->
 
     <button type="submit" ng-disabled="newProjectForm.$invalid" class="btn btn-block btn-primary">Add Project</button>
   </form>

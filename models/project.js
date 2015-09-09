@@ -10,12 +10,11 @@ var ProjectSchema = new mongoose.Schema({
   updated_at: { type: Date, default: Date.now },
 
   title: { type: String, required: true },
-  liveUrl: { type: String, lowercase: true},
+  liveUrl: { type: String, lowercase: true, default: ""},
   image: { type: String, default: "default-project.jpg"},
 
   githubUrl: { type: String, default: ""},
-  description: { type: String, default: "", required: true },
-  snippet: { type: String, default: ""},
+  content: { type: String, default: "# Start of a new Project"},
 
   likes: { type: Number, default: 0},
   views: { type: Number, default: 0},

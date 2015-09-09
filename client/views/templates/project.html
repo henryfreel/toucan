@@ -1,7 +1,7 @@
 <div class="container project-view-container">
   <div class="row">
 
-    <div ng-controller="markedController as marked">
+    <!-- <div ng-controller="markedController as marked">
       <div class="row">
         <div class="col-sm-6">
           <textarea class="form-control" id="inputText" ng-model="marked.inputText" auto-grow></textarea>
@@ -12,15 +12,11 @@
       </div>
     </div>
     <br>
-    <br>
+    <br> -->
 
-    <div class="col-sm-9">
+    <div class="col-sm-8 col-md-offset-2">
 
-      <div class="row">
-        <div class="col-md-12">
-          <div class="project-view-image-container" style="background-image: url(/images/{{ project.image }});"></div>
-        </div>
-      </div>
+      <!-- <div class="project-view-image-container" style="background-image: url(/images/{{ project.image }});"></div> -->
 
       <!-- <div class="row">
         <div class="col-md-12">
@@ -28,44 +24,23 @@
         </div>
       </div>  -->
 
-    </div>
+      <div class="project-view-title-container">
+            <div class="project-view-title">{{ project.title }}</div>
+      </div>
 
-    <div class="project-view-info-container col-md-3">
+      <div class="edit-project">
+        <a href=""></a>
+        <!-- <a ng-click="deleteProject(project)" class="btn btn-danger" href="javascript:void(0)">Delete Project</a> -->
+      </div>
 
-        <div class="project-view-item">
-          <div class="project-view-title">{{ project.title }}</div>
-        </div>
+      <div class="project-view-item">
+        <div class="project-view-avatar" style="background-image: url(/images/henry.png);"></div>
+        <div class="project-view-username"><a href="javascript:void(0)">{{ project.user.username }}</a></div>
+      </div>
 
-        <div class="project-view-item">
-          <div class="project-view-avatar" style="background-image: url(/images/henry.png);"></div>
-          <div class="project-view-username"><a href="javascript:void(0)">username</a></div>
-        </div>
+      <hr>
 
-        <div class="project-view-item">  
-          <div class="project-view-link"><span class="fa fa-globe fa-fw profile-info-icon"></span><a href="javascript:void(0)" target="_blank">{{ project.liveUrl }}</a></div>
-        </div>
-
-        <div class="project-view-item">
-          <div class="project-view-github"><span class="fa fa-github fa-fw profile-info-icon"></span><a href="{{ project.githubUrl }}" target="_blank">{{ project.githubUrl }}</a></div class="project-view-github">
-        </div>
-
-        <div class="project-view-item">
-
-          <a  class="project-view-like like-project" href="javascript:void(0)" class="like-project" data-id="{{ project._id }}">
-              <span class="fa fa-heart fa-fw heart-unselected profile-info-icon" aria-hidden="true"></span><span class="like-project-text">Like</span>
-          </a>
-
-          <div class="project-view-like-counter"><span id="like-counter">{{ project.likes }}</span> <span id="like-counter-text">Likes</span></div>
-
-        </div>
-
-        <div class="project-view-item">
-          <div class="project-view-bio">{{ project.description }}</div>
-        </div>
-
-        <div class="edit-project">
-          <a ng-click="deleteProject(project)" class="btn btn-danger" href="javascript:void(0)">Delete Project</a>
-        </div>
+      <div ng-bind-html="project.content"></div>
 
     </div>
 

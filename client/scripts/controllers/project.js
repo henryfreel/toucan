@@ -5,6 +5,10 @@ app.controller('NewProjectCtrl', ['$rootScope', '$scope', '$location', '$routePa
 	$scope.newProject = function() {
 
 		$scope.project.user = $rootScope.currentUser
+
+		var projectTitle = $scope.project.title
+
+		$scope.project.content = '## ' + projectTitle + '\nHere is the start of your project';
 	    
 		$http.post('/api/projects/new', $scope.project)
 			.then(function(response) {
@@ -32,11 +36,35 @@ app.controller('ProjectCtrl', ['$rootScope', '$scope', '$location', '$routeParam
 				
 			$scope.project = response.data;
 
+			$scope.project.content = marked(response.data.content)
+
+			// $scope.$watch('marked.inputText', function(current, original) {
+			//     	markdown.outputText = marked(current);
+			// 	});
+
 		}, function(response) {
 
 			$location.path('/404');
 
 		});
+
+	marked.setOptions({
+	    renderer: new marked.Renderer(),
+	    gfm: true,
+	    tables: true,
+	    breaks: false,
+	    pedantic: false,
+	    sanitize: false, // if false -> allow plain old HTML ;)
+	    smartLists: true,
+	    smartypants: false,
+	    highlight: function (code, lang) {
+	      if (lang) {
+	        return hljs.highlight(lang, code).value;
+	      } else {
+	        return hljs.highlightAuto(code).value;
+	      }
+	    }
+	  });
 
 	$scope.deleteProject = function (project) {
 

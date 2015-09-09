@@ -158,24 +158,24 @@
 }
 
 /* line 145, ../compass/sass/projects.scss */
+.project-view-title {
+  font-size: 54px;
+  font-weight: 900;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+/* line 153, ../compass/sass/projects.scss */
 .project-view-image-container {
   height: 500px;
   background-position: top center;
   background-size: cover;
 }
 
-/* line 151, ../compass/sass/projects.scss */
+/* line 159, ../compass/sass/projects.scss */
 .project-view-item {
   display: block;
   margin: 0px 0 8px 0;
-}
-
-/* line 156, ../compass/sass/projects.scss */
-.project-view-title {
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 15px;
-  line-height: 1.3;
 }
 
 /* line 164, ../compass/sass/projects.scss */

@@ -15,7 +15,6 @@
     "dotenv": "^1.2.0",
     "express": "^4.13.3",
     "jwt-simple": "^0.3.1",
-    "marked": "^0.3.5",
     "moment": "^2.10.6",
     "mongoose": "^4.1.5",
     "satellizer": "^0.12.4"

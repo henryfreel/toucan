@@ -2,8 +2,7 @@
 var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),  // for data from the request body
-    mongoose = require('mongoose'),       // to interact with our db
-    marked = require('marked');
+    mongoose = require('mongoose');       // to interact with our db
 
 require('dotenv').load();
 
@@ -232,7 +231,7 @@ app.get('/api/projects/:id', function (req, res) {
 
   var targetProject = req.params.id;
 
-  Project.findOne({_id: targetProject}, function (err, foundProject) {
+  Project.findOne({_id: targetProject}).populate('user').exec(function (err, foundProject) {
 
     if (foundProject) {
 
