@@ -2,7 +2,8 @@
 var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),  // for data from the request body
-    mongoose = require('mongoose');       // to interact with our db
+    mongoose = require('mongoose'),       // to interact with our db
+    marked = require('marked');
 
 require('dotenv').load();
 

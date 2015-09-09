@@ -1,5 +1,5 @@
 // removed -> , 'App.controllers'
-var app = angular.module('tukanApp', ['ngRoute', 'ngMessages', 'satellizer']);
+var app = angular.module('tukanApp', ['ngRoute', 'ngMessages', 'satellizer','ngSanitize']);
 
 app.config(['$routeProvider', '$locationProvider', '$authProvider', function ($routeProvider, $locationProvider, $authProvider) {
 
@@ -57,3 +57,14 @@ app.config(['$routeProvider', '$locationProvider', '$authProvider', function ($r
 
 
 }]);
+
+
+
+
+
+
+
+
+
+
+

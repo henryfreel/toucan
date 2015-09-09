@@ -1,6 +1,19 @@
 <div class="container project-view-container">
   <div class="row">
 
+    <div ng-controller="markedController as marked">
+      <div class="row">
+        <div class="col-sm-6">
+          <textarea class="form-control" id="inputText" ng-model="marked.inputText" auto-grow></textarea>
+        </div>
+        <div class="col-sm-6">
+          <div id="outputText" ng-bind-html="marked.outputText"></div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+
     <div class="col-sm-9">
 
       <div class="row">
