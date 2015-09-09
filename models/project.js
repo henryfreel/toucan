@@ -11,7 +11,7 @@ var ProjectSchema = new mongoose.Schema({
 
   title: { type: String, required: true },
   liveUrl: { type: String, lowercase: true},
-  image: { type: String, default: "default-project.png"},
+  image: { type: String, default: "default-project.jpg"},
 
   githubUrl: { type: String, default: ""},
   description: { type: String, default: "", required: true },

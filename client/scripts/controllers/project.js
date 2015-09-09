@@ -1,18 +1,15 @@
-app.controller('ProjectPageCtrl', ['$rootScope', '$scope', '$location', '$routeParams', '$http', function ($rootScope, $scope, $location, $routeParams, $http) {
+app.controller('NewProjectCtrl', ['$rootScope', '$scope', '$location', '$routeParams', '$http', function ($rootScope, $scope, $location, $routeParams, $http) {
 
 	$scope.project = {};
 
 	$scope.newProject = function() {
 
 		$scope.project.user = $rootScope.currentUser
-
-		console.log("--> New Project submitted by...");
-		console.log($scope.project.user);
 	    
 		$http.post('/api/projects/new', $scope.project)
 			.then(function(response) {
 					
-				$scope.book = {};
+				$scope.project = {};
 
 			}, function(response) {
 			});
@@ -22,7 +19,25 @@ app.controller('ProjectPageCtrl', ['$rootScope', '$scope', '$location', '$routeP
 
 }]);
 
-app.controller('ProjectsPageCtrl', ['$scope',function ($scope) {
+app.controller('ProjectCtrl', ['$rootScope', '$scope', '$location', '$routeParams', '$http', function ($rootScope, $scope, $location, $routeParams, $http) {
+
+	var projectId = $routeParams.id
+
+	$http.get('/api/projects/' + projectId)
+		.then(function(response) {
+				
+			$scope.project = response.data;
+
+		}, function(response) {
+
+			$location.path('/404');
+
+		});
+
+
+}]);
+
+app.controller('ProjectsCtrl', ['$scope',function ($scope) {
 
 	$scope.project = "huh?";
 

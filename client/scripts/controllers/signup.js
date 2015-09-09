@@ -1,4 +1,4 @@
-app.controller('SignupCtrl', ['$scope', '$auth', '$location', function ($scope, $auth, $location) {
+app.controller('SignupCtrl', ['$rootScope','$scope', '$auth', '$location', '$http', function ($rootScope, $scope, $auth, $location, $http) {
 
 	$scope.authenticate = function(provider) {
 	  $auth.authenticate(provider);
@@ -19,14 +19,14 @@ app.controller('SignupCtrl', ['$scope', '$auth', '$location', function ($scope, 
             $http.get('/api/me')
               .then(function(response) {
             
-                $rootScope.currentUser = response.data; 
+                $rootScope.currentUser = response.data;
+
+              var loggedInUser = response.data.username
+              $location.path('/' + loggedInUser); 
 
               }, function(response) {
               });
 
-            var userName = $rootScope.currentUser
-
-            $location.path('/' + userName);
           })
           .catch(function(response) {
             // toastr.error(response.data.message, response.status);

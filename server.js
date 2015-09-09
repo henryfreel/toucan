@@ -28,6 +28,7 @@ app.use(bodyParser.json());
 // set location for static files
 app.use(express.static(__dirname + '/client'));
 
+
 /*
  |--------------------------------------------------------------------------
  | Login Required Middleware
@@ -54,6 +55,7 @@ function ensureAuthenticated(req, res, next) {
   next();
 }
 
+
 /*
  |--------------------------------------------------------------------------
  | Generate JSON Web Token
@@ -71,38 +73,12 @@ function createJWT(user) {
 
 /*
  |--------------------------------------------------------------------------
- | GET /api/me
+ | Authentication
  |--------------------------------------------------------------------------
  */
-app.get('/api/me', ensureAuthenticated, function(req, res) {
-  User.findById(req.user, function(err, user) {
-    res.send(user);
-  });
-});
 
-/*
- |--------------------------------------------------------------------------
- | PUT /api/me
- |--------------------------------------------------------------------------
- */
-app.put('/api/me', ensureAuthenticated, function(req, res) {
-  User.findById(req.user, function(err, user) {
-    if (!user) {
-      return res.status(400).send({ message: 'User not found' });
-    }
-    user.username = req.body.username || user.username;
-    user.email = req.body.email || user.email;
-    user.save(function(err) {
-      res.status(200).end();
-    });
-  });
-});
+// Login
 
-/*
- |--------------------------------------------------------------------------
- | Log in with Email
- |--------------------------------------------------------------------------
- */
 app.post('/auth/login', function(req, res) {
   User.findOne({ email: req.body.email }, '+password', function(err, user) {
     if (!user) {
@@ -117,11 +93,8 @@ app.post('/auth/login', function(req, res) {
   });
 });
 
-/*
- |--------------------------------------------------------------------------
- | Create Email and Password Account
- |--------------------------------------------------------------------------
- */
+// Signup
+
 app.post('/auth/signup', function(req, res) {
  User.findOne({ email: req.body.email }, function(err, existingUser) {
    if (existingUser) {
@@ -141,14 +114,40 @@ app.post('/auth/signup', function(req, res) {
 
 /*
  |--------------------------------------------------------------------------
- | Find Specific User for profile
+ | Users
  |--------------------------------------------------------------------------
  */
-app.get('/api/users/:username', function (req, res) {
 
-  var targetUser = req.params.username;
+// Find [Current] User
 
-  User.findOne({username: targetUser}, function (err, foundUser) {
+app.get('/api/me', ensureAuthenticated, function(req, res) {
+  User.findById(req.user, function(err, user) {
+    res.send(user);
+  });
+});
+
+// Edit User
+
+app.put('/api/me', ensureAuthenticated, function(req, res) {
+  User.findById(req.user, function(err, user) {
+    if (!user) {
+      return res.status(400).send({ message: 'User not found' });
+    }
+    user.username = req.body.username || user.username;
+    user.email = req.body.email || user.email;
+    user.save(function(err) {
+      res.status(200).end();
+    });
+  });
+});
+
+// Find User
+
+app.get('/api/users/:id', function (req, res) {
+
+  var targetUser = req.params.id;
+
+  User.findOne({username: targetUser}).populate('projects').exec(function (err, foundUser) {
 
     if (foundUser) {
       res.json(foundUser);
@@ -164,58 +163,68 @@ app.get('/api/users/:username', function (req, res) {
 
 /*
  |--------------------------------------------------------------------------
- | Create New Project
+ | Projects
  |--------------------------------------------------------------------------
  */
+
+// New Project
+
 app.post('/api/projects/new', function (req, res) {
 
   var newProject = new Project(req.body)
 
   newProject.save( function (err, savedProject) {
 
-    // res.json(savedProject);
+    if (savedProject) {
 
-    var userId = savedProject.user
+      var userId = savedProject.user
 
-    console.log("--> This is the Id of the user who created the newProject");
-    console.log(userId);
+      User.findOne({_id: userId}).exec(function (err, foundUser) {
 
-    User.findOne({_id: userId}).exec(function (err, foundUser) {
+        foundUser.projects.push(savedProject);
 
-      
+        foundUser.save(function (err, savedUser) {
 
-    });
+          if (savedUser) {
 
-  })
+            res.json(savedProject);
 
-  // User.findOne({_id: req.session.userId}).exec(function (err, foundUser) {
+          } else {
+            res.status(500).send('Couldn\'t save user');
+            // res.redirect('/views/404.html')
+          }
 
-  //     console.log('--> this is the current user');
-  //     console.log(foundUser.email);
+        });
 
-  //     var newList = new List(req.body);
+      });
 
-  //     newList.author = foundUser;
+    } else {
+      res.status(500).send('Couldn\'t save project');
+      // res.redirect('/views/404.html')
+    }
 
-  //     newList.save(function (err, savedList) {
+  });
 
-  //       console.log('--> list array before push');
-  //       console.log(foundUser.lists);
+});
 
-  //       // add newList to `lists` array
-  //       foundUser.lists.push(savedList);
+// Find Project
 
-  //       foundUser.save(function (err, savedUser) {
-  //         // send newList as JSON response
-  //         res.json(savedList);
-  //       });
+app.get('/api/projects/:id', function (req, res) {
 
-  //       console.log('--> list array after push');
-  //       console.log(foundUser.lists);
+  var targetProject = req.params.id;
 
-  //     });
+  Project.findOne({_id: targetProject}, function (err, foundProject) {
 
-  // }); 
+    if (foundProject) {
+
+      res.json(foundProject);
+
+    } else {
+      res.status(404).send('Sorry cant find that!');
+      // res.redirect('/views/404.html')
+    }
+
+  });
 
 });
 

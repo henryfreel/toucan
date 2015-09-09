@@ -18,7 +18,7 @@
             <li ng-if="isAuthenticated()" class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><div id="navbar-avatar" style="background-image: url(/images/{{ currentUser.profilePicture }});"></div><div id="navbar-username">{{ currentUser.username }}</div></a>
                 <ul class="dropdown-menu pull-right">
-                  <li><a href="/profile"><span class="fa fa-user fa-fw profile-info-icon"></span> Profile</a></li>
+                  <li><a href="/{{ currentUser.username }}"><span class="fa fa-user fa-fw profile-info-icon"></span> Profile</a></li>
                   <li><a href="/"><span class="fa fa-cog fa-fw profile-info-icon"></span> Settings</a></li>
                   <li role="separator" class="divider"></li>
                   <li><a ng-click="logout()" href="javascript:void(0)"><span class="fa fa-sign-out fa-fw profile-info-icon"></span> Logout</a></li>
