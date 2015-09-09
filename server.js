@@ -4,6 +4,8 @@ var express = require('express'),
     bodyParser = require('body-parser'),  // for data from the request body
     mongoose = require('mongoose');       // to interact with our db
 
+require('dotenv').load();
+
 var path = require('path');
 var cors = require('cors');
 var jwt = require('jwt-simple');
@@ -17,8 +19,7 @@ var Project = require('./models/project');
 // connect to mongodb
 mongoose.connect(
   process.env.MONGOLAB_URI ||
-  process.env.MONGOHQ_URL ||
-  'mongodb://localhost/toucan'
+  process.env.MONGOHQ_URL
 );
 
 // configure body-parser
@@ -284,7 +285,7 @@ app.get('*', function (req, res) {
 });
 
 // listen on port 3000
-app.listen(process.env.PORT || 3000, function () {
+app.listen(process.env.PORT, function () {
   console.log('server started on localhost:3000');
 });
 
