@@ -18,7 +18,7 @@
 
 	<div ng-repeat="project in projects" class="panel panel-default">
 		<div class="panel-heading"><a ng-href="/projects/{{ project._id }}">{{ project.title }}</a></div>
-		<div class="panel-body">{{ project.description }}</div>
+		<div class="panel-body">{{ project.content | limitTo : 45 }}...</div>
 	</div>
 
   </div>

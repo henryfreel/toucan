@@ -1,14 +1,11 @@
 app.controller('markedController', ['$scope', '$http', function ($scope, $http) {
 
-	// console.log(marked('I am using __markdown__.'));
-
 	var markdown = this;  // alias for 'this', so we can access it in $scope.$watch
 	 
 		this.inputText = '';
 	 
 		$scope.$watch('marked.inputText', function(current, original) {
 	    	markdown.outputText = marked(current);
-	    	// markdown.outputText = current;
 		});
 
 	marked.setOptions({

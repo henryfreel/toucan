@@ -11,6 +11,10 @@ app.config(['$routeProvider', '$locationProvider', '$authProvider', function ($r
             templateUrl: '/views/templates/new-project.html',
             controller: 'NewProjectCtrl'
         })
+        .when('/projects/:id/edit', {
+            templateUrl: '/views/templates/edit-project.html',
+            controller: 'ProjectCtrl'
+        })
         .when('/projects/:id', {
             templateUrl: '/views/templates/project.html',
             controller: 'ProjectCtrl'
@@ -25,6 +29,10 @@ app.config(['$routeProvider', '$locationProvider', '$authProvider', function ($r
           })
         .when('/404', {
             templateUrl: '/views/404.html',
+            controller: 'MainCtrl'
+        })
+        .when('/500', {
+            templateUrl: '/views/500.html',
             controller: 'MainCtrl'
         })
         .when('/:id/edit', {

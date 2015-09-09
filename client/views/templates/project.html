@@ -29,8 +29,7 @@
       </div>
 
       <div class="edit-project">
-        <a href=""></a>
-        <!-- <a ng-click="deleteProject(project)" class="btn btn-danger" href="javascript:void(0)">Delete Project</a> -->
+        <a ng-href="/projects/{{ project._id }}/edit" class="btn btn-default pull-right">Edit Project</a>
       </div>
 
       <div class="project-view-item">
@@ -40,7 +39,7 @@
 
       <hr>
 
-      <div ng-bind-html="project.content"></div>
+      <div ng-bind-html="markedOnView(project.content)"></div>
 
     </div>
 

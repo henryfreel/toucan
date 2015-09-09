@@ -31,22 +31,30 @@ app.controller('ProjectCtrl', ['$rootScope', '$scope', '$location', '$routeParam
 
 	var projectId = $routeParams.id
 
+	var projectThing = this;  // alias for 'this', so we can access it in $scope.$watch
+
 	$http.get('/api/projects/' + projectId)
 		.then(function(response) {
 				
 			$scope.project = response.data;
 
-			$scope.project.content = marked(response.data.content)
-
-			// $scope.$watch('marked.inputText', function(current, original) {
-			//     	markdown.outputText = marked(current);
-			// 	});
+			$scope.project.content = response.data.content;
 
 		}, function(response) {
 
 			$location.path('/404');
 
 		});
+
+	$scope.markedOnView = function (content) {
+
+		if (content != undefined) {
+
+			return marked(content);
+
+		}
+
+	}
 
 	marked.setOptions({
 	    renderer: new marked.Renderer(),
@@ -65,6 +73,23 @@ app.controller('ProjectCtrl', ['$rootScope', '$scope', '$location', '$routeParam
 	      }
 	    }
 	  });
+
+	$scope.updateProject = function (project) {
+
+		console.log("You clicked the update project button");
+
+	  	$http.put('/api/projects/' + projectId + '/edit', project)
+	  		.then(function(response) {
+
+		  		$location.path('/projects/' + projectId);
+
+
+	  		}, function(response) {
+
+	  			$location.path('/500');
+	  	});
+
+  	}
 
 	$scope.deleteProject = function (project) {
 
