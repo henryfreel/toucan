@@ -441,22 +441,26 @@ body {
   height: 40px;
   margin: 0;
   z-index: 100;
+  position: fixed;
+  top: 70px;
+  right: 0;
+  left: 0;
 }
 
-/* line 398, ../compass/sass/style.scss */
+/* line 402, ../compass/sass/style.scss */
 .secondary-navigation-list-container {
   margin: auto;
   text-align: center;
 }
 
-/* line 403, ../compass/sass/style.scss */
+/* line 407, ../compass/sass/style.scss */
 #page-header .secondary-navigation-list {
   padding: 0;
   display: inline-block;
   margin: auto;
 }
 
-/* line 409, ../compass/sass/style.scss */
+/* line 413, ../compass/sass/style.scss */
 #page-header .secondary-navigation-list > li {
   display: inline-block;
   padding: 0;
@@ -467,31 +471,31 @@ body {
   padding-top: 10px;
 }
 
-/* line 420, ../compass/sass/style.scss */
+/* line 424, ../compass/sass/style.scss */
 #page-header .secondary-navigation-list > li > a {
   padding: 0;
   font-weight: 400;
   color: #C4C4C4;
 }
 
-/* line 426, ../compass/sass/style.scss */
+/* line 430, ../compass/sass/style.scss */
 #page-header .secondary-navigation-list > li > a:hover, #page-header .secondary-navigation-list > li > a:focus {
   color: #404040;
   text-decoration: none;
 }
 
-/* line 431, ../compass/sass/style.scss */
+/* line 435, ../compass/sass/style.scss */
 #page-header .secondary-navigation-list > li > a.active {
   color: #404040;
 }
 
 /* - - - - - - - - Error Page - - - - - - - - */
-/* line 437, ../compass/sass/style.scss */
+/* line 441, ../compass/sass/style.scss */
 #error-jumbotron {
   background-image: url(/images/profile-bg-2.png);
 }
 
-/* line 441, ../compass/sass/style.scss */
+/* line 445, ../compass/sass/style.scss */
 .error-message {
   margin-top: 15px;
   font-size: 18px;
