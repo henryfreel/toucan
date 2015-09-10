@@ -159,6 +159,14 @@
 }
 
 /* line 146, ../compass/sass/projects.scss */
+#project-content img {
+  margin: auto;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* line 154, ../compass/sass/projects.scss */
 .project-view-title {
   font-size: 54px;
   font-weight: 900;
@@ -166,24 +174,24 @@
   color: #404040;
 }
 
-/* line 155, ../compass/sass/projects.scss */
+/* line 163, ../compass/sass/projects.scss */
 .project-view-summary {
   font-size: 21px;
   color: #404040;
 }
 
-/* line 160, ../compass/sass/projects.scss */
+/* line 168, ../compass/sass/projects.scss */
 .project-info-container {
   margin-top: 30px;
 }
 
-/* line 164, ../compass/sass/projects.scss */
+/* line 172, ../compass/sass/projects.scss */
 .project-view-item {
   display: block;
   margin: 0px 0 8px 0;
 }
 
-/* line 169, ../compass/sass/projects.scss */
+/* line 177, ../compass/sass/projects.scss */
 .project-view-avatar {
   height: 30px;
   width: 30px;
@@ -195,7 +203,7 @@
   display: inline-block;
 }
 
-/* line 180, ../compass/sass/projects.scss */
+/* line 188, ../compass/sass/projects.scss */
 .project-view-username {
   padding: 0px 0 10px 0;
   font-size: 14px;
@@ -208,28 +216,28 @@
   top: -9px;
 }
 
-/* line 192, ../compass/sass/projects.scss */
+/* line 200, ../compass/sass/projects.scss */
 .project-view-username > a {
   color: #404040;
 }
 
-/* line 196, ../compass/sass/projects.scss */
+/* line 204, ../compass/sass/projects.scss */
 .project-view-link > a {
   font-weight: 400;
   color: #404040;
 }
 
-/* line 201, ../compass/sass/projects.scss */
+/* line 209, ../compass/sass/projects.scss */
 .edit-project-button {
   margin-top: -2px;
 }
 
-/* line 205, ../compass/sass/projects.scss */
+/* line 213, ../compass/sass/projects.scss */
 .btn-danger {
   background-color: #D1191D;
 }
 
-/* line 209, ../compass/sass/projects.scss */
+/* line 217, ../compass/sass/projects.scss */
 pre {
   display: block;
   padding: 10px;
@@ -245,7 +253,7 @@ pre {
   border-radius: 4px;
 }
 
-/* line 224, ../compass/sass/projects.scss */
+/* line 232, ../compass/sass/projects.scss */
 .edit-panel {
   top: 0;
   left: 0;
