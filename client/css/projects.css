@@ -154,7 +154,7 @@
 /* - - - - - - - - Project Page - - - - - - - - */
 /* line 141, ../compass/sass/projects.scss */
 .project-view-container {
-  margin-top: 30px;
+  margin-top: 60px;
 }
 
 /* line 145, ../compass/sass/projects.scss */
@@ -278,4 +278,20 @@
   margin-top: 15px;
   color: #FAFAFA;
   background-color: #7E2E2E;
+}
+
+/* line 253, ../compass/sass/projects.scss */
+pre {
+  display: block;
+  padding: 10px;
+  padding-left: 15px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #FAFAFA;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #404040;
+  border: 1px solid #404040;
+  border-radius: 4px;
 }

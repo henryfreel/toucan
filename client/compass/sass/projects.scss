@@ -139,7 +139,7 @@
 /* - - - - - - - - Project Page - - - - - - - - */
 
 .project-view-container {
-	margin-top: 30px;
+	margin-top: 60px;
 }
 
 .project-view-title {
@@ -248,4 +248,19 @@
 	margin-top: 15px;
 	color: $grey-lightest;
 	background-color: #7E2E2E;
+}
+
+pre {
+    display: block;
+    padding: 10px;
+    padding-left: 15px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: $grey-lightest;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: $grey-dark;
+    border: 1px solid $grey-dark;
+    border-radius: 4px;
 }

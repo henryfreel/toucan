@@ -1,4 +1,4 @@
-var app = angular.module('tukanApp', ['ngRoute', 'ngMessages', 'satellizer','ngSanitize']);
+var app = angular.module('tukanApp', ['ngRoute', 'ngMessages', 'satellizer','ngSanitize', 'ngFileUpload']);
 
 app.config(['$routeProvider', '$locationProvider', '$authProvider', function ($routeProvider, $locationProvider, $authProvider) {
 

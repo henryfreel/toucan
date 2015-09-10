@@ -1,6 +1,6 @@
 <div class="col-sm-4 col-sm-offset-4">
   <br>
-  <legend>Signup</legend>
+  <legend>Edit Profile</legend>
 
   <form ng-submit="updateProfile(user)" name="editProfileForm">
 
@@ -11,6 +11,14 @@
         <div ng-message="required">You must enter your name.</div>
       </div>
     </div>
+
+    <input type="file" ngf-select ng-model="picFile" name="file"    
+             accept="image/*" ngf-max-size="2MB" required>
+      <i ng-show="myForm.file.$error.required">*required</i><br>
+      <i ng-show="myForm.file.$error.maxSize">File too large 
+          {{picFile.size / 1000000|number:1}}MB: max {{picFile.$errorParam}}</i>
+      <img ng-show="myForm.file.$valid" ngf-src="!picFile.$error && picFile"
+           class="thumb">
 
     <div class="form-group has-feedback" ng-class="{ 'has-error' : editProfileForm.email.$invalid && editProfileForm.email.$dirty }">
       <input class="form-control input" type="email" id="email" name="email" ng-model="user.email" placeholder="Email" required disabled>
