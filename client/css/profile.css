@@ -39,3 +39,8 @@
   width: 800px;
   margin: auto;
 }
+
+/* line 43, ../compass/sass/profile.scss */
+.edit-profile-button {
+  margin-left: 14px;
+}
