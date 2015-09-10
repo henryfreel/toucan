@@ -9,8 +9,8 @@
 }
 
 /* line 9, ../compass/sass/projects.scss */
-.container.projects-container {
-  margin-top: 70px;
+.projects-container {
+  margin-top: 30px;
 }
 
 /* line 13, ../compass/sass/projects.scss */
@@ -18,6 +18,18 @@
   display: inline-block;
   margin: 0;
   color: #404040;
+}
+
+/* line 19, ../compass/sass/projects.scss */
+.sort-by {
+  float: right;
+}
+
+/* line 23, ../compass/sass/projects.scss */
+.sort-by > button {
+  background-color: #FFFFFF;
+  border: 1px solid #C4C4C4;
+  margin-top: -5px;
 }
 
 /* line 29, ../compass/sass/projects.scss */
