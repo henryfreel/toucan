@@ -140,6 +140,7 @@
 
 .project-view-container {
 	margin-top: 60px;
+	margin-bottom: 120px;
 }
 
 .project-view-title {
@@ -148,12 +149,6 @@
 	font-weight: 900;
 	margin-bottom: 15px;
 	line-height: 1.3;
-}
-
-.project-view-image-container {
-	height: 500px;
-	background-position: top center;
-	background-size: cover;
 }
 
 .project-view-item {
@@ -188,66 +183,17 @@
 	color: $grey-dark;
 }
 
-.project-view-link {
-	white-space: nowrap;
-	font-size: 13px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
 .project-view-link > a {
 	font-weight: 400;
 	color: $grey-dark;
 }
 
-.project-view-github {
-	white-space: nowrap;
-	font-size: 13px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-.project-view-github > a {
-	font-weight: 400;
-	color: $grey-dark;
-}
-
-.project-view-like {
-	display: inline-block;
-	font-size: 13px;
-	color: $grey-dark;
-	font-weight: 400;
-	display: inline-block;
-}
-
-.project-view-like-counter {
-	display: inline-block;
-	float: right;
-	font-size: 13px;
-	color: $grey;
-	font-weight: 400;
-}
-
-.project-view-bio {
-	margin-top: 15px;
-	font-size: 13px;
-	font-weight: 300;
-}
-
 .edit-project-button {
-	margin-top: 15px;
+	margin-top: -2px;
 }
 
-.btn-secondary.delete-project-button {
-	margin-top: 15px;
-	color: $grey-lightest;
-	background-color: #A74848;
-}
-
-.btn-secondary.delete-project-button:hover {
-	margin-top: 15px;
-	color: $grey-lightest;
-	background-color: #7E2E2E;
+.btn-danger {
+	background-color: $red;
 }
 
 pre {
@@ -263,4 +209,9 @@ pre {
     background-color: $grey-dark;
     border: 1px solid $grey-dark;
     border-radius: 4px;
+}
+
+.edit-panel {
+	top: 0;
+	left: 0;
 }

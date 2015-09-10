@@ -19,6 +19,7 @@
           {{picFile.size / 1000000|number:1}}MB: max {{picFile.$errorParam}}</i>
       <img ng-show="myForm.file.$valid" ngf-src="!picFile.$error && picFile"
            class="thumb">
+    <button ng-click="uploadPic(picFile)">Submit</button>
 
     <div class="form-group has-feedback" ng-class="{ 'has-error' : editProfileForm.email.$invalid && editProfileForm.email.$dirty }">
       <input class="form-control input" type="email" id="email" name="email" ng-model="user.email" placeholder="Email" required disabled>
