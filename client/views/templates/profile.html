@@ -19,7 +19,7 @@
 	<div class="projects-container">
 		<div ng-repeat="project in projects" class="project-container">
 			<div class="project-title"><a ng-href="/projects/{{ project._id }}">{{ project.title }}</a></div>
-			<div class="project-summary">{{ project.summary | limitTo : 255 }}...</div>
+			<div class="project-summary">{{ project.summary }}</div>
 		</div>
 	</div>
 
