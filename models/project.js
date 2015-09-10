@@ -14,6 +14,7 @@ var ProjectSchema = new mongoose.Schema({
   image: { type: String, default: "default-project.jpg"},
 
   githubUrl: { type: String, default: ""},
+  summary: { type: String, default: ""},
   content: { type: String, default: "# Start of a new Project"},
 
   likes: { type: Number, default: 0},

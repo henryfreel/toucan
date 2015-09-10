@@ -6,9 +6,10 @@ app.controller('NewProjectCtrl', ['$rootScope', '$scope', '$location', '$routePa
 
 		$scope.project.user = $rootScope.currentUser
 
-		var projectTitle = $scope.project.title
+		var projectTitle = $scope.project.title;
+		var projectSummary = $scope.project.summary;
 
-		$scope.project.content = '## ' + projectTitle + '\nHere is the start of your project';
+		$scope.project.content = '### **Here is the story of ' + projectTitle + '**' + '\nWe\'ve started your project\'s story, in MarkDown! **Click on the edit button to add more!**';
 	    
 		$http.post('/api/projects/new', $scope.project)
 			.then(function(response) {
@@ -31,7 +32,7 @@ app.controller('ProjectCtrl', ['$rootScope', '$scope', '$location', '$routeParam
 
 	var projectId = $routeParams.id
 
-	var projectThing = this;  // alias for 'this', so we can access it in $scope.$watch
+	// var projectThing = this;  // alias for 'this', so we can access it in $scope.$watch
 
 	$http.get('/api/projects/' + projectId)
 		.then(function(response) {

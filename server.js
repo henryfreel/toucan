@@ -258,6 +258,7 @@ app.put('/api/projects/:id/edit', function (req, res) {
 
       foundProject.title = req.body.title || foundProject.title;
       foundProject.liveUrl = req.body.liveUrl || foundProject.liveUrl;
+      foundProject.summary = req.body.summary || foundProject.summary;
       foundProject.content = req.body.content || foundProject.content;
       // res.json(foundProject);
 

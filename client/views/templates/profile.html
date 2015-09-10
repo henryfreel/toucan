@@ -16,9 +16,11 @@
 <div class="container">
   <div class="row col-md-8 col-md-offset-2">
 
-	<div ng-repeat="project in projects" class="panel panel-default">
-		<div class="panel-heading"><a ng-href="/projects/{{ project._id }}">{{ project.title }}</a></div>
-		<div class="panel-body">{{ project.content | limitTo : 45 }}...</div>
+	<div class="projects-container">
+		<div ng-repeat="project in projects" class="project-container">
+			<div class="project-title"><a ng-href="/projects/{{ project._id }}">{{ project.title }}</a></div>
+			<div class="project-summary">{{ project.summary | limitTo : 255 }}...</div>
+		</div>
 	</div>
 
   </div>

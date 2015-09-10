@@ -44,3 +44,25 @@
 .edit-profile-button {
   margin-left: 14px;
 }
+
+/* line 47, ../compass/sass/profile.scss */
+.projects-container {
+  margin-top: 15px;
+  margin-bottom: 120px;
+}
+
+/* line 52, ../compass/sass/profile.scss */
+.project-container {
+  margin-top: 30px;
+}
+
+/* line 56, ../compass/sass/profile.scss */
+.project-title {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+/* line 60, ../compass/sass/profile.scss */
+.project-title a {
+  color: #404040;
+  font-weight: 700;
+}

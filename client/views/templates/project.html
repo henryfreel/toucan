@@ -5,9 +5,10 @@
 
       <div class="project-view-title-container">
             <div class="project-view-title">{{ project.title }}</div>
+            <div class="project-view-summary">{{ project.summary }}</div>
       </div>
 
-      <div class="project-info-contaner">
+      <div class="project-info-container">
 
         <div ng-if="isAuthenticated() && currentUser" class="edit-project">
           <a ng-href="/projects/{{ project._id }}/edit" class="btn btn-default edit-project-button pull-right">Edit Project</a>

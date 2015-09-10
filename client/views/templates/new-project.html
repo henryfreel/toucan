@@ -5,9 +5,17 @@
 
     <div class="form-group has-feedback" ng-class="{ 'has-error' : newProjectForm.title.$invalid && newProjectForm.title.$dirty }">
       <input class="form-control input" type="text" name="title" ng-model="project.title" placeholder="Project Title" required autofocus>
-      <span class="ion-folder form-control-feedback"></span>
+      <!-- <span class="ion-folder form-control-feedback"></span> -->
       <div class="help-block text-danger" ng-if="newProjectForm.title.$dirty" ng-messages="newProjectForm.title.$error">
         <div ng-message="required">You must enter a title.</div>
+      </div>
+    </div>
+
+    <div class="form-group has-feedback" ng-class="{ 'has-error' : newProjectForm.summary.$invalid && newProjectForm.summary.$dirty }">
+      <textarea class="form-control input" type="text" name="summary" ng-model="project.summary" placeholder="Project summary" required></textarea>
+      <!-- <span class="ion-folder form-control-feedback"></span> -->
+      <div class="help-block text-danger" ng-if="newProjectForm.summary.$dirty" ng-messages="newProjectForm.summary.$error">
+        <div ng-message="required">You must enter a summary.</div>
       </div>
     </div>
 

@@ -30,7 +30,8 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
 .hljs-request,
 .hljs-status,
 .nginx .hljs-title {
-  color: #859900;
+  /*color: #859900;*/
+  color: #3EAE05;
 }
 
 /* Solarized Cyan */
