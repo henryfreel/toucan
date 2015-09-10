@@ -1,4 +1,4 @@
-app.controller('ProfilePageCtrl', ['$scope', '$http','$routeParams', '$location', 'Upload', '$timeout', function ($scope, $http ,$routeParams, $location, Upload, $timeout) {
+app.controller('ProfilePageCtrl', ['$scope', '$http','$routeParams', '$location', function ($scope, $http ,$routeParams, $location, Upload, $timeout) {
 
 	var userName = $routeParams.id
 
