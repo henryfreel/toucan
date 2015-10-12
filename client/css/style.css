@@ -33,9 +33,9 @@ body {
 /* line 32, ../compass/sass/style.scss */
 #navbar {
   background-color: #FFFFFF;
-  -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05);
-  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05);
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* line 38, ../compass/sass/style.scss */

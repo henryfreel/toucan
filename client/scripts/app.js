@@ -3,7 +3,7 @@ var app = angular.module('tukanApp', ['ngRoute', 'ngMessages', 'satellizer','ngS
 app.config(['$routeProvider', '$locationProvider', '$authProvider', function ($routeProvider, $locationProvider, $authProvider) {
 
     $routeProvider.
-        when('/projects', {
+        when('/', {
         	templateUrl: '/views/templates/projects.html',
         	controller: 'ProjectsCtrl'
         })
@@ -44,7 +44,7 @@ app.config(['$routeProvider', '$locationProvider', '$authProvider', function ($r
             controller: 'ProfilePageCtrl'
         })
         .otherwise({
-        	redirectTo: '/projects'
+        	redirectTo: '/'
         });
  
     $authProvider.github({

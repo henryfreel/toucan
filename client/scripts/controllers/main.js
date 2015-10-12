@@ -39,9 +39,11 @@ app.controller('MainCtrl', ['$rootScope','$scope', '$location', '$auth', '$http'
 
     }
 
+    // path === '/' || 
+
     $scope.$on('$locationChangeSuccess', function() {
         var path = $location.path();
-        if (path === '/projects' || path === '/signup' || path === '/login' || path === '/projects/new') {
+        if (path === '/signup' || path === '/login' || path === '/projects/new') {
             $scope.pageClass = "grey-page";
         } else {
             $scope.pageClass = "white-page";

@@ -246,6 +246,27 @@ app.get('/api/projects/:id', function (req, res) {
 
 });
 
+// Find ProjectS
+
+app.get('/api/projects', function (req, res) {
+
+  // var targetProject = req.params.id;
+
+  Project.find(function (err, foundProjects) {
+
+    if (foundProjects) {
+
+      res.json(foundProjects);
+
+    } else {
+      res.status(404).send('Sorry cant find that!');
+      // res.redirect('/views/404.html')
+    }
+
+  });
+
+});
+
 // Update Project
 
 app.put('/api/projects/:id/edit', function (req, res) {
