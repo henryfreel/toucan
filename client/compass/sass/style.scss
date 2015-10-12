@@ -172,57 +172,57 @@ body {
 
 // Primary Button
 
-.navbar .btn-primary {
+.btn.btn-primary {
   background-color: $primary-color;
 }
 
-.navbar .btn-primary:hover {
+.btn.btn.btn-primary:hover {
   background-color: $primary-color-dark;
 }
 
-.navbar .btn-primary:active {
+.btn.btn-primary:active {
   background-color: $primary-color-dark;
 }
 
-.navbar .btn-primary:focus {
+.btn.btn-primary:focus {
   background-color: $primary-color-dark;
 }
 
 // Secondary Button
 
-.navbar .btn-secondary {
+.btn.btn-secondary {
   background-color: $blue;
 }
 
-.navbar .btn-secondary:hover {
+.btn.btn-secondary:hover {
   background-color: $blue-dark;
 }
 
-.navbar .btn-secondary:active {
+.btn.btn-secondary:active {
   background-color: $blue-dark;
 }
 
-.navbar .btn-secondary:focus {
+.btn.btn-secondary:focus {
   background-color: $blue-dark;
 }
 
 // Default Button
 
-.navbar .btn-default {
+.btn.btn-default {
   background-color: $grey-medium;
 }
 
-.navbar .btn-default:hover {
+.btn.btn-default:hover {
   background-color: $grey-dark;
   color:$white;
 }
 
-.navbar .btn-default:active {
+.btn.btn-default:active {
     background-color: $grey-dark;
     color:$white;
 }
 
-.navbar .btn-default:focus {
+.btn.btn-default:focus {
   background-color: $grey-dark;
   color:$white;
 }
@@ -376,14 +376,6 @@ body {
   border: none;
 }
 
-#welcome-jumbotron .btn-primary {
-  background-color: $primary-color;
-}
-
-#welcome-jumbotron .btn-default {
-  background-color: $grey-medium;
-}
-
 /* - - - - - - - - Secondary Header - - - - - - - - */
 
 #page-header {
@@ -445,9 +437,37 @@ body {
   font-weight: 400;
 }
 
+/* - - - - - - - - Sign Up Form - - - - - - - - */
 
+.form-container {
+  margin-top: 30px;
+  padding: 30px;
+  background-color: $white;
+  border-radius: $border-radius;
+  @include box-shadow($box-shadow);
+}
 
+.form-header {
+  font-size: 24px;
+  font-weight: 600;
+  color: $grey-medium;
+  text-align: center;
+  margin-bottom: 30px;
+}
 
+.form-container .btn-primary {
+  font-size: 18px;
+  color: $white;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 300;
+  border-radius: $border-radius;
+  border-color: $primary-color;
+}
+
+.signup-or-separator {
+  text-align: center;
+}
 
 
 

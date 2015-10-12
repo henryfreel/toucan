@@ -194,64 +194,64 @@ body {
 }
 
 /* line 175, ../compass/sass/style.scss */
-.navbar .btn-primary {
+.btn.btn-primary {
   background-color: #3EAE05;
 }
 
 /* line 179, ../compass/sass/style.scss */
-.navbar .btn-primary:hover {
+.btn.btn.btn-primary:hover {
   background-color: #357411;
 }
 
 /* line 183, ../compass/sass/style.scss */
-.navbar .btn-primary:active {
+.btn.btn-primary:active {
   background-color: #357411;
 }
 
 /* line 187, ../compass/sass/style.scss */
-.navbar .btn-primary:focus {
+.btn.btn-primary:focus {
   background-color: #357411;
 }
 
 /* line 193, ../compass/sass/style.scss */
-.navbar .btn-secondary {
+.btn.btn-secondary {
   background-color: #1761C1;
 }
 
 /* line 197, ../compass/sass/style.scss */
-.navbar .btn-secondary:hover {
+.btn.btn-secondary:hover {
   background-color: #0F4385;
 }
 
 /* line 201, ../compass/sass/style.scss */
-.navbar .btn-secondary:active {
+.btn.btn-secondary:active {
   background-color: #0F4385;
 }
 
 /* line 205, ../compass/sass/style.scss */
-.navbar .btn-secondary:focus {
+.btn.btn-secondary:focus {
   background-color: #0F4385;
 }
 
 /* line 211, ../compass/sass/style.scss */
-.navbar .btn-default {
+.btn.btn-default {
   background-color: #666666;
 }
 
 /* line 215, ../compass/sass/style.scss */
-.navbar .btn-default:hover {
+.btn.btn-default:hover {
   background-color: #404040;
   color: #FFFFFF;
 }
 
 /* line 220, ../compass/sass/style.scss */
-.navbar .btn-default:active {
+.btn.btn-default:active {
   background-color: #404040;
   color: #FFFFFF;
 }
 
 /* line 225, ../compass/sass/style.scss */
-.navbar .btn-default:focus {
+.btn.btn-default:focus {
   background-color: #404040;
   color: #FFFFFF;
 }
@@ -423,18 +423,8 @@ body {
   border: none;
 }
 
-/* line 379, ../compass/sass/style.scss */
-#welcome-jumbotron .btn-primary {
-  background-color: #3EAE05;
-}
-
-/* line 383, ../compass/sass/style.scss */
-#welcome-jumbotron .btn-default {
-  background-color: #666666;
-}
-
 /* - - - - - - - - Secondary Header - - - - - - - - */
-/* line 389, ../compass/sass/style.scss */
+/* line 381, ../compass/sass/style.scss */
 #page-header {
   background-color: #FAFAFA;
   box-shadow: inset 0px -1px rgba(0, 0, 0, 0.08);
@@ -443,20 +433,20 @@ body {
   z-index: 100;
 }
 
-/* line 398, ../compass/sass/style.scss */
+/* line 390, ../compass/sass/style.scss */
 .secondary-navigation-list-container {
   margin: auto;
   text-align: center;
 }
 
-/* line 403, ../compass/sass/style.scss */
+/* line 395, ../compass/sass/style.scss */
 #page-header .secondary-navigation-list {
   padding: 0;
   display: inline-block;
   margin: auto;
 }
 
-/* line 409, ../compass/sass/style.scss */
+/* line 401, ../compass/sass/style.scss */
 #page-header .secondary-navigation-list > li {
   display: inline-block;
   padding: 0;
@@ -467,34 +457,71 @@ body {
   padding-top: 10px;
 }
 
-/* line 420, ../compass/sass/style.scss */
+/* line 412, ../compass/sass/style.scss */
 #page-header .secondary-navigation-list > li > a {
   padding: 0;
   font-weight: 400;
   color: #C4C4C4;
 }
 
-/* line 426, ../compass/sass/style.scss */
+/* line 418, ../compass/sass/style.scss */
 #page-header .secondary-navigation-list > li > a:hover, #page-header .secondary-navigation-list > li > a:focus {
   color: #404040;
   text-decoration: none;
 }
 
-/* line 431, ../compass/sass/style.scss */
+/* line 423, ../compass/sass/style.scss */
 #page-header .secondary-navigation-list > li > a.active {
   color: #404040;
 }
 
 /* - - - - - - - - Error Page - - - - - - - - */
-/* line 437, ../compass/sass/style.scss */
+/* line 429, ../compass/sass/style.scss */
 #error-jumbotron {
   background-image: url(/images/profile-bg-2.png);
 }
 
-/* line 441, ../compass/sass/style.scss */
+/* line 433, ../compass/sass/style.scss */
 .error-message {
   margin-top: 15px;
   font-size: 18px;
   color: #FFFFFF;
   font-weight: 400;
+}
+
+/* - - - - - - - - Sign Up Form - - - - - - - - */
+/* line 442, ../compass/sass/style.scss */
+.form-container {
+  margin-top: 30px;
+  padding: 30px;
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* line 450, ../compass/sass/style.scss */
+.form-header {
+  font-size: 24px;
+  font-weight: 600;
+  color: #666666;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* line 458, ../compass/sass/style.scss */
+.form-container .btn-primary {
+  font-size: 18px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 300;
+  border-radius: 3px;
+  border-color: #3EAE05;
+}
+
+/* line 468, ../compass/sass/style.scss */
+.signup-or-separator {
+  text-align: center;
 }
