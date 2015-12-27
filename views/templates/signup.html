@@ -1,0 +1,32 @@
+.container
+  .col-sm-4.col-sm-offset-4.form-container
+    .form-header Sign Up
+    form(method='post', ng-submit='signup()', name='signupForm')
+      .form-group.has-feedback(ng-class="{ 'has-error' : signupForm.username.$invalid && signupForm.username.$dirty }")
+        input.form-control.input(type='text', name='username', ng-model='user.username', placeholder='username', required='', autofocus='')
+        .help-block.text-danger(ng-if='signupForm.username.$dirty', ng-messages='signupForm.username.$error')
+          div(ng-message='required') You must enter your name.
+      .form-group.has-feedback(ng-class="{ 'has-error' : signupForm.email.$invalid && signupForm.email.$dirty }")
+        input#email.form-control.input(type='email', name='email', ng-model='user.email', placeholder='Email', required='')
+        .help-block.text-danger(ng-if='signupForm.email.$dirty', ng-messages='signupForm.email.$error')
+          div(ng-message='required') Your email address is required.
+          div(ng-message='pattern') Your email address is invalid.
+      .form-group.has-feedback(ng-class="{ 'has-error' : signupForm.password.$invalid && signupForm.password.$dirty }")
+        input.form-control.input(password-strength='', type='password', name='password', ng-model='user.password', placeholder='Password', required='')
+        .help-block.text-danger(ng-if='signupForm.password.$dirty', ng-messages='signupForm.password.$error')
+          div(ng-message='required') Password is required.
+      .form-group.has-feedback(ng-class="{ 'has-error' : signupForm.confirmPassword.$invalid && signupForm.confirmPassword.$dirty }")
+        input.form-control.input(password-match='user.password', type='password', name='confirmPassword', ng-model='user.confirmPassword', placeholder='Confirm Password')
+        .help-block.text-danger(ng-if='signupForm.confirmPassword.$dirty', ng-messages='signupForm.confirmPassword.$error')
+          div(ng-message='compareTo') Password must match.
+        //- p.text-center.text-muted
+        //-   small
+        //-     | By clicking on Sign up, you agree to 
+        //-     a(href='#') terms & conditions
+        //-     |  and 
+        //-     a(href='#') privacy policy
+      button.btn.btn.btn-block.btn-primary(type='submit', ng-disabled='signupForm.$invalid') Sign up
+      br
+      p.text-center.text-muted
+        | Already have an account? 
+        a(href='/#/login') Log in now

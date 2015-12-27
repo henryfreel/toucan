@@ -1,0 +1,54 @@
+doctype html
+html(lang='en', ng-app='tukanApp')
+  head
+    meta(charset='utf8')
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1")
+    base(href='/')
+    title  Toucan | Share your code
+
+    link(rel='shortcut icon', href='/images/favicon.ico')
+
+    //- FONTS    
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Quicksand', type='text/css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:400,700,300,500,400italic,300italic', type='text/css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,300,500,600,700', type='text/css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lato:900,700,400,300,300italic,400italic,700', type='text/css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/vendor/ionicons/css/ionicons.min.css', type='text/css')
+
+    //- VENDOR STYLES
+    link(rel='stylesheet', href='/vendor/bootstrap/dist/css/bootstrap.css', type='text/css')
+    link(rel='stylesheet', href='/vendor/highlightjs/styles/default.css', type='text/css')
+    link(rel='stylesheet', href='/css/solarized_dark.css', type='text/css')
+
+    //- CUSTOM STYLES
+    link(rel='stylesheet', href='/css/style.css', type='text/css')
+    link(rel='stylesheet', href='/css/projects.css', type='text/css')
+    link(rel='stylesheet', href='/css/profile.css', type='text/css')
+    link(rel='stylesheet', href='/css/normalize.css', type='text/css')
+
+    //- VENDOR SCRIPTS
+    script(src='/vendor/angular/angular.min.js')
+    script(src='/vendor/angular-route/angular-route.min.js')
+    script(src='/vendor/angular-messages/angular-messages.min.js')
+    script(src='/vendor/angular-sanitize/angular-sanitize.min.js')
+    script(src='/vendor/jquery/dist/jquery.min.js')
+    script(src='/vendor/bootstrap/dist/js/bootstrap.min.js')
+    script(src='/vendor/highlightjs/highlight.pack.min.js')
+    script(src='/vendor/satellizer/satellizer.min.js')
+    script(src='/vendor/marked/marked.min.js')
+    script(src='/vendor/ng-file-upload/ng-file-upload-all.min.js')
+    script(src='/vendor/ng-file-upload/ng-file-upload-shim.min.js')
+    script(src='/vendor/ng-file-upload/ng-file-upload.min.js')
+
+    //- APP SCRIPTS
+    script(src='/scripts/app.js')
+    script(src='/scripts/controllers/mainCtrl.js')
+    script(src='/scripts/controllers/authCtrl.js')
+    script(src='/scripts/controllers/projectCtrl.js')
+    script(src='/scripts/controllers/marksCtrl.js')
+    script(src='/scripts/controllers/userCtrl.js')
+
+  body.pageClass(ng-controller='MainCtrl')
+    ng-include(src=" 'templates/navbar' ")
+    div(ng-view)

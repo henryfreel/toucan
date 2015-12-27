@@ -1,0 +1,41 @@
+nav#navbar.navbar.navbar-fixed-top(role='navigation')
+  .container-fluid
+    .navbar-header
+      a#navbar-brand.navbar-brand(href='/')
+        #navbar-logo
+        #navbar-name TOUCAN
+    ul.nav.navbar-nav.nav-links
+      li(ng-model='page', ng-class="{active:isActive('/projects')}")
+        a(href='/projects') Projects
+      li(ng-model='page', ng-class="{active:isActive('/developers')}")
+        a(href='/users') Developers
+      // <li ng-model="page" ng-class="{active:isActive('/about')}"><a href="/about">Teams</a></li>
+      // <li ng-model="page" ng-class="{active:isActive('/about')}"><a href="/about">Jobs</a></li>
+      // <li ng-model="page" ng-class="{active:isActive('/about')}"><a href="/about">About</a></li>
+    ul#navbar-right.nav.navbar-nav
+      li.dropdown(ng-if='isAuthenticated()')
+        a.dropdown-toggle(href='#', data-toggle='dropdown')
+          #navbar-avatar(style='background-image: url(/images/{{ currentUser.profilePicture }});')
+          #navbar-username {{ currentUser.username }}
+        ul.dropdown-menu.pull-right
+          li
+            a(href='/{{ currentUser.username }}')
+              span.fa.fa-user.fa-fw.profile-info-icon
+              |  Profile
+          li
+            a(href='/')
+              span.fa.fa-cog.fa-fw.profile-info-icon
+              |  Settings
+          li.divider(role='separator')
+          li
+            a(ng-click='logout()', href='javascript:void(0)')
+              span.fa.fa-sign-out.fa-fw.profile-info-icon
+              |  Logout
+      li
+        a.btn.btn-primary(ng-if='isAuthenticated()', href='/projects/new')
+          span.fa.fa-leaf(aria-hidden='true')
+          |  &nbspNew Project
+      li
+        a.btn.btn-default(ng-if='!isAuthenticated()', href='/signup') Sign up
+      li
+        a.btn.btn-secondary(ng-if='!isAuthenticated()', href='/login') Log in

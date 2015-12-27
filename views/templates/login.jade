@@ -1,0 +1,36 @@
+.container
+  .col-sm-4.col-sm-offset-4.form-container
+    br
+    .form-header Login
+    button.btn.btn-block.btn-github(ng-disabled='true', ng-click="authenticate('github')")
+      i.ion-social-github
+      |  Sign in with GitHub
+    button.btn.btn-block.btn-twitter(ng-disabled='true', ng-click="authenticate('twitter')")
+      i.ion-social-twitter
+      |  Sign in with Twitter
+    .signup-or-separator
+      h6.text or
+      hr
+    form(method='post', ng-submit='login()', name='loginForm')
+      .form-group.has-feedback
+        input.form-control.input(type='text', name='email', ng-model='user.email', placeholder='Email', required='', autofocus='')
+      .form-group.has-feedback
+        input.form-control.input(type='password', name='password', ng-model='user.password', placeholder='Password', required='')
+      button.btn.btn.btn-block.btn-primary(type='submit', ng-disabled='loginForm.$invalid') Log in
+      br
+      p.text-center.text-muted
+      p.text-center.text-muted
+        | Don't have an account yet? 
+        a(href='/signup') Sign up
+        
+      //- button(ng-click="authenticate('facebook')") Sign in with Facebook
+      //- br
+      //- button(ng-click="authenticate('google')") Sign in with Google
+      //- br
+      //- button(ng-click="authenticate('github')") Sign in with GitHub
+      //- br
+      //- button(ng-click="authenticate('linkedin')") Sign in with LinkedIn
+      //- br
+      //- button(ng-click="authenticate('twitter')") Sign in with Twitter
+      //- br
+      //- button(ng-click="authenticate('foursquare')") Sign in with Foursquare

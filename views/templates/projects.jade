@@ -1,0 +1,43 @@
+#welcome-jumbotron(ng-if='!isAuthenticated()')
+  .container
+    .row
+      .col-md-8.col-md-offset-2.text-center
+        h1 Welcome to Toucan!
+        p Toucan is where developers can show off projects they've worked on in the detail they deserve.
+        ul.jumbotron-buttons
+          li
+            a.btn.btn-default(href='/about') Learn More About Toucan
+          li
+            a.btn.btn-primary(href='/signup') Post your first project!
+#page-header
+  .container
+    .row
+      .col-md-12.secondary-navigation-list-container
+        ul.secondary-navigation-list
+          li.secondary-navigation-item
+            a.active(href='javascript:void(0)') Popular
+          li.secondary-navigation-item
+            a(href='javascript:void(0)') Recent
+          li.secondary-navigation-item
+            a(href='javascript:void(0)') Following
+.container.projects-container
+  .row.col-md-8.col-md-offset-2
+    .project-preview-container(ng-repeat="project in projects | orderBy: '-likes' | limitTo:10")
+      .project-preview-content
+        .project-preview-image-container
+          a(href='/projects/{{ project._id }}')
+            .project-preview-image(style='background-image: url(../images/{{ project.image }});')
+        .project-preview-info
+          .project-preview-title(href='#') {{ project.title }}
+          .project-preview-summary(href='#') {{ project.summary }}
+        .project-preview-metrics
+          .project-preview-icon
+            span.fa.fa-heart.heart-unselected(aria-hidden='true')
+            span.like-project-text {{ project.likes }}
+          .project-preview-icon
+            span.fa.fa-eye.fa-lg.heart-unselected(aria-hidden='true')
+            span.like-project-text {{ project.views }}
+          .project-preview-user
+            .project-preview-avatar(style='background-image: url(images/default.png);')
+            a(href='#')
+              .project-preview-username Username

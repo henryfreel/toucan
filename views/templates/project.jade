@@ -1,0 +1,15 @@
+.container.project-view-container
+  .row
+    .col-sm-8.col-md-offset-2
+      .project-view-title-container
+        .project-view-title {{ project.title }}
+        .project-view-summary {{ project.summary }}
+      .project-info-container
+        .edit-project(ng-if='isAuthenticated() && currentUser')
+          a.btn.btn-default.edit-project-button.pull-right(ng-href='/projects/{{ project._id }}/edit') Edit Project
+        .project-view-item
+          .project-view-avatar(style='background-image: url(/images/henry.png);')
+          .project-view-username
+            a(href='javascript:void(0)') {{ project.user.username }}
+      hr
+      #project-content(ng-bind-html='markedOnView(project.content)')
