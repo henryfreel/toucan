@@ -1,7 +1,13 @@
 
 
 Bugs
+	• Grey Pages
 
 Top Priority
+	• Project Page
+	• Profile Page
 
 Low Priority
+	• Landing Page
+	• Sign Up page
+	• Log in Page

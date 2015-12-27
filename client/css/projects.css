@@ -182,14 +182,15 @@
   text-align: center;
   margin-top: 30px;
   margin-bottom: 30px;
+  max-width: 100%;
 }
 
-/* line 187, ../compass/sass/projects.scss */
+/* line 188, ../compass/sass/projects.scss */
 #project-content p {
   font-size: 16px;
 }
 
-/* line 191, ../compass/sass/projects.scss */
+/* line 192, ../compass/sass/projects.scss */
 .project-view-title {
   font-size: 54px;
   font-weight: 900;
@@ -197,24 +198,24 @@
   color: #404040;
 }
 
-/* line 200, ../compass/sass/projects.scss */
+/* line 201, ../compass/sass/projects.scss */
 .project-view-summary {
   font-size: 21px;
   color: #404040;
 }
 
-/* line 205, ../compass/sass/projects.scss */
+/* line 206, ../compass/sass/projects.scss */
 .project-info-container {
   margin-top: 30px;
 }
 
-/* line 209, ../compass/sass/projects.scss */
+/* line 210, ../compass/sass/projects.scss */
 .project-view-item {
   display: block;
   margin: 0px 0 8px 0;
 }
 
-/* line 214, ../compass/sass/projects.scss */
+/* line 215, ../compass/sass/projects.scss */
 .project-view-avatar {
   height: 30px;
   width: 30px;
@@ -226,7 +227,7 @@
   display: inline-block;
 }
 
-/* line 225, ../compass/sass/projects.scss */
+/* line 226, ../compass/sass/projects.scss */
 .project-view-username {
   padding: 0px 0 10px 0;
   font-size: 14px;
@@ -239,28 +240,28 @@
   top: -9px;
 }
 
-/* line 237, ../compass/sass/projects.scss */
+/* line 238, ../compass/sass/projects.scss */
 .project-view-username > a {
   color: #404040;
 }
 
-/* line 241, ../compass/sass/projects.scss */
+/* line 242, ../compass/sass/projects.scss */
 .project-view-link > a {
   font-weight: 400;
   color: #404040;
 }
 
-/* line 246, ../compass/sass/projects.scss */
+/* line 247, ../compass/sass/projects.scss */
 .edit-project-button {
   margin-top: -2px;
 }
 
-/* line 250, ../compass/sass/projects.scss */
+/* line 251, ../compass/sass/projects.scss */
 .btn-danger {
   background-color: #D1191D;
 }
 
-/* line 254, ../compass/sass/projects.scss */
+/* line 255, ../compass/sass/projects.scss */
 pre {
   display: block;
   padding: 10px;
@@ -276,7 +277,7 @@ pre {
   border-radius: 4px;
 }
 
-/* line 269, ../compass/sass/projects.scss */
+/* line 270, ../compass/sass/projects.scss */
 .edit-panel {
   top: 0;
   left: 0;
