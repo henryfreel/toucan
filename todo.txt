@@ -1,6 +1,11 @@
 Bugs
-	• Log In/Sign Up error states (ADAM)
+	• "Log In" page not working for Henry locally
+	• Sign Up error states with help text (ADAM)
+		- passwords don't match
+	• Log In error states with help text (ADAM)
+		- 
 	• Sign Up => Edit Profile
+	• Remove "New Project" Page
 	• New Project => Edit Project
 	• Projects should have Published, Unpublished states (ADAM)
 	• Edit Project Page should have "Save" and "Publish" actions
@@ -9,13 +14,13 @@ Top Priority
 	• Styling for Log In/Sign Up error states (HENRY)
 	• Photo uploading for User (ADAM)
 	• Photo uploading for Project (ADAM)
-	• Project Page Design (HENRY)
-	• Profile Page Design (HENRY)
+	• "Project Page" Design (HENRY)
+	• "Profile Page" Design (HENRY)
 
 Low Priority
-	• Mobile layout for all pages (HENRY)
+	• Reasonable mobile layout for all pages (HENRY)
 	• Github Auth, Both Sign Up and Log in? (ADAM)
 	• Twiiter Auth? (ADAM)
 	• Landing Page Design (HENRY)
-	• Sign Up Page Design (HENRY)
-	• Log In Page Design (HENRY)
+	• "Sign Up" Page Design (HENRY)
+	• "Log In" Page Design (HENRY)
