@@ -3,8 +3,9 @@ Bugs
 	• Sign Up error states with help text (ADAM)
 		- passwords don't match
 	• Log In error states with help text (ADAM)
-		- 
+		- incorrect email or password
 	• Sign Up => Edit Profile
+	• Default User should have no First Name, no Last Name, and no Job Description
 	• Remove "New Project" Page
 	• New Project => Edit Project
 	• Projects should have Published, Unpublished states (ADAM)
@@ -18,6 +19,7 @@ Top Priority
 	• "Profile Page" Design (HENRY)
 
 Low Priority
+	• Analytics
 	• Reasonable mobile layout for all pages (HENRY)
 	• Github Auth, Both Sign Up and Log in? (ADAM)
 	• Twiiter Auth? (ADAM)
