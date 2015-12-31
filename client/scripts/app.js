@@ -1,5 +1,3 @@
-
-
 var app = angular.module('tukanApp', ['ngRoute', 
                                       'ngMessages', 
                                       'satellizer',
