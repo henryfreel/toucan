@@ -171,6 +171,21 @@ body {
   border: none;
 }
 
+.navbar .btn {
+  color: $white;
+  margin-top: 17px;
+  margin-left: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: capitalize;
+  border-radius: $border-radius;
+  border: none;
+}
+
 // Primary Button
 
 .btn.btn-primary {
