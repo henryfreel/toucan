@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "./node_modules/bower/bin/bower install"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +20,7 @@
     "jwt-simple": "^0.3.1",
     "moment": "^2.10.6",
     "mongoose": "^4.1.5",
-    "satellizer": "^0.12.4"
+    "satellizer": "^0.12.4",
+    "bower": "0.6.x"
   }
 }
