@@ -4,15 +4,15 @@ nav#navbar.navbar.navbar-fixed-top(role='navigation')
       a#navbar-brand.navbar-brand(href='/')
         #navbar-logo
         #navbar-name TOUCAN
-    ul.nav.navbar-nav.nav-links
-      //- li(ng-model='page', ng-class="{active:isActive('/projects')}")
+    //- ul.nav.navbar-nav.nav-links
+      li(ng-model='page', ng-class="{active:isActive('/projects')}")
         a(href='/projects') Projects
-      //- li(ng-model='page', ng-class="{active:isActive('/developers')}")
+      li(ng-model='page', ng-class="{active:isActive('/developers')}")
         a(href='/users') Developers
-      //- <li ng-model="page" ng-class="{active:isActive('/about')}"><a href="/about">Teams</a></li>
-      //- <li ng-model="page" ng-class="{active:isActive('/about')}"><a href="/about">Jobs</a></li>
-      //- <li ng-model="page" ng-class="{active:isActive('/about')}"><a href="/about">About</a></li>
-    ul#navbar-right.nav.navbar-nav
+      <li ng-model="page" ng-class="{active:isActive('/about')}"><a href="/about">Teams</a></li>
+      <li ng-model="page" ng-class="{active:isActive('/about')}"><a href="/about">Jobs</a></li>
+      <li ng-model="page" ng-class="{active:isActive('/about')}"><a href="/about">About</a></li>
+    ul#navbar-buttons
       li.dropdown(ng-if='isAuthenticated()')
         a.dropdown-toggle(href='#', data-toggle='dropdown')
           #navbar-avatar(style='background-image: url(/images/{{ currentUser.profilePicture }});')

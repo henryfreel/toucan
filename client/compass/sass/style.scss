@@ -35,6 +35,7 @@ body {
   background-color: $white;
   @include box-shadow($box-shadow);
   // box-shadow: 0px 0px 0px rgba(0,0,0,0.0);
+  height: 70px;
 }
 
 .navbar-fixed-top {
@@ -51,7 +52,6 @@ body {
   font-size: 21px;
   height: 70px;
   padding-top: 15px;
-  margin-right: 10px;
 }
 
 #navbar-logo {
@@ -71,6 +71,10 @@ body {
   font-weight: 700;
   letter-spacing: -1px;
   top: -13px; 
+  display: inline-block;
+}
+
+.nav-links {
   display: inline-block;
 }
 
@@ -110,55 +114,15 @@ body {
   color: $grey-darkest;
 }
 
-#navbar-right {
+#navbar-buttons {
   float: right;
+  padding: 0;
+  // display: inline-block;
 }
 
-#navbar .navbar-nav .open > a {
-  color: $grey;
-}
-
-#navbar-username {
+#navbar-buttons li {
+  // float: right;
   display: inline-block;
-  position: relative;
-  top: -1px;
-  color: $grey-medium;
-  font-weight: 400;
-}
-
-#navbar-username:hover {
-  color: $grey-dark;
-}
-
-#navbar-right .dropdown-toggle {
-  height: 70px;
-}
-
-#navbar-right .dropdown-toggle:hover  > #navbar-username {
-  color: $grey-dark;
-}
-
-#navbar-right .dropdown-toggle:hover {
-  background-color: $white;
-}
-
-#navbar-right .dropdown-toggle:focus {
-  background-color: $white;
-}
-
-#navbar-avatar {
-  height: 30px;
-  width: 30px;
-  background-size: cover;
-  background-position: center;
-  display: inline-block;
-  position: relative;
-  margin:0;
-  padding:0;
-  margin-right: 8px;
-  margin-top: 5px;
-  margin-bottom:-10px;
-  border-radius: 50%;
 }
 
 .navbar .btn {
@@ -300,7 +264,61 @@ body {
    color: $grey;  
 }
 
-/* - - - - - - - - Dropdown Menu - - - - - - - - */
+/* - - - - - - - - Username Dropdown Menu - - - - - - - - */
+
+.navbar .dropdown {
+  position: relative;
+  top: -10px;
+  display: inline-block;
+}
+
+#navbar .navbar-nav .open > a {
+  color: $grey;
+}
+
+#navbar-username {
+  display: inline-block;
+  position: relative;
+  top: -3px;
+  color: $grey-medium;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+#navbar-username:hover {
+  color: $grey-dark;
+}
+
+#navbar-buttons .dropdown-toggle {
+  height: 70px;
+}
+
+#navbar-buttons .dropdown-toggle:hover  > #navbar-username {
+  color: $grey-dark;
+}
+
+#navbar-buttons .dropdown-toggle:hover {
+  background-color: $white;
+}
+
+#navbar-buttons .dropdown-toggle:focus {
+  background-color: $white;
+}
+
+#navbar-avatar {
+  height: 36px;
+  width: 36px;
+  background-size: cover;
+  background-position: center;
+  display: inline-block;
+  position: relative;
+  margin:0;
+  padding:0;
+  margin-right: 8px;
+  margin-top: -3px;
+  margin-bottom:-10px;
+  border-radius: 50%;
+}
 
 .dropdown-menu {
   min-width: 160px;
@@ -486,7 +504,17 @@ body {
   text-align: center;
 }
 
+@media (max-width: 540px) {
 
+  #navbar-name {
+    // display: none;
+  }
+
+  #navbar-username {
+    display: none;
+  }
+
+} //end
 
 
 
