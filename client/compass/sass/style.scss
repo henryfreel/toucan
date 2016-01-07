@@ -350,7 +350,7 @@ body {
 }
 
 #welcome-jumbotron h1 {
-  margin-top: 20vh;
+  margin-top: 25vh;
   font-weight: 800;
   font-size: 54px;
   margin-bottom: 15px;
@@ -375,17 +375,15 @@ body {
 }
 
 // #welcome-jumbotron .jumbotron-buttons > li > a {
-  // margin-left: 8px;
-  // margin-right: 8px;
+//   margin-left: 8px;
+//   margin-right: 8px;
 // }
 
 #welcome-jumbotron .btn {
   color: $white;
-  // margin-left: 10px;
   padding: 12px 30px 12px 30px;
   font-size: 18px;
   font-weight: 500;
-  // text-transform: uppercase;
   border-radius: $border-radius;
   border: none;
 }
