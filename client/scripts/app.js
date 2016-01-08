@@ -27,7 +27,7 @@ app.config(['$routeProvider', '$locationProvider', '$authProvider', function ($r
             controller: 'UsersCtrl'
         })
         .when('/login', {
-            templateUrl: 'views/templates/login',
+            templateUrl: 'templates/login',
             controller: 'LoginCtrl'
           })
         .when('/signup', {
