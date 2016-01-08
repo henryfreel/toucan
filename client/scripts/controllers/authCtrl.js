@@ -1,7 +1,7 @@
 
 app.controller('LoginCtrl', ['$rootScope','$scope', '$location', '$auth','$http', function ($rootScope, $scope, $location, $auth, $http) {
 
-	$scope.authenticate = function(provider) {
+  $scope.authenticate = function(provider) {
       $auth.authenticate(provider)
         .then(function() {
           // toastr.success('You have successfully signed in with ' + provider);
@@ -12,7 +12,7 @@ app.controller('LoginCtrl', ['$rootScope','$scope', '$location', '$auth','$http'
         });
     };
 
-	$scope.login = function() {
+  $scope.login = function() {
       $auth.login($scope.user)
         .then(function(response) {
           // toastr.success('You have successfully signed in');

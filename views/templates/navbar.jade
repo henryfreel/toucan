@@ -1,7 +1,10 @@
 nav#navbar.navbar.navbar-fixed-top(role='navigation')
   .container-fluid
     .navbar-header
-      a#navbar-brand.navbar-brand(href='/')
+      a#navbar-brand.navbar-brand(ng-if='!isAuthenticated()',href='/')
+        #navbar-logo
+        #navbar-name TOUCAN
+      a#navbar-brand.navbar-brand(ng-if='isAuthenticated()', href='/{{ currentUser.username }}')
         #navbar-logo
         #navbar-name TOUCAN
     //- ul.nav.navbar-nav.nav-links
