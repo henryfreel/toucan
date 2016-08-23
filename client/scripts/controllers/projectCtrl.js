@@ -80,8 +80,6 @@ app.controller('ProjectCtrl', ['$rootScope', '$scope', '$location', '$routeParam
 
 app.controller('ProjectsCtrl', ['$rootScope', '$scope', '$location', '$http', function ($rootScope, $scope, $routeParams, $http) {
 
-	$scope.project = "huh?";
-
 	$http.get('/api/projects')
 		.then(function (response) {
 			$scope.projects = response.data;

@@ -3,8 +3,6 @@
     .profile-image(style='background-image: url(images/{{ user.profilePicture }});')
     .profile-username {{ user.firstName }} {{ user.lastName }}
     .profile-bio {{ user.bio }}
-  .edit-profile-button(ng-if='isAuthenticated() && currentUser')
-    a.btn.btn-default.pull-left(ng-href='/{{ user.username }}/edit') Edit Profile
 div
   .container
     .row.col-md-8.col-md-offset-2
