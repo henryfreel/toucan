@@ -1,9 +1,14 @@
 CRITICAL PATH TO MVP
  DONE - Medium editor
- - New Project goes directly to medium editor and creates a draft
+ - New Project should go directly to medium editor no "new" pages
  - Autosave medium editor
- - Browse projects page
+ - Polish browse projects page 
+ - project, contributor save
  - Sample Projects, Help young devs write cool project descriptions
+ - Project tags
+ - About, How it Works page
+ - SEO
+ 
  
 
 
