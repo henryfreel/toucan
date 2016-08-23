@@ -3,7 +3,7 @@
 /* - - - - - - - - Images - - - - - - - - */
 /* line 4, ../compass/sass/profile.scss */
 #profile-jumbotron {
-  background-image: url(/images/profile-bg-2.png);
+  background-image: url('/images/profile-bg-2.png');
 }
 
 /* line 8, ../compass/sass/profile.scss */
@@ -54,20 +54,24 @@
 /* line 52, ../compass/sass/profile.scss */
 .project-container {
   margin-top: 30px;
+  border: solid #eeeeee 1px;
+  border-radius: 4px;
+  min-height: 230px;
+  padding: 10px;
 }
 
-/* line 56, ../compass/sass/profile.scss */
+/* line 60, ../compass/sass/profile.scss */
 .project-title {
   font-size: 28px;
   margin-bottom: 10px;
 }
-/* line 60, ../compass/sass/profile.scss */
+/* line 64, ../compass/sass/profile.scss */
 .project-title a {
   color: #404040;
   font-weight: 700;
 }
 
-/* line 66, ../compass/sass/profile.scss */
+/* line 70, ../compass/sass/profile.scss */
 .project-summary {
   font-size: 16px;
   padding-right: 60px;

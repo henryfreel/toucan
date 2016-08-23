@@ -68,7 +68,7 @@ body {
   margin-right: 10px;
   background-size: cover;
   background-position: center;
-  background-image: url('../images/logo-02.svg?1441764102');
+  background-image: url('/images/logo-02.svg');
 }
 
 /* line 68, ../compass/sass/style.scss */
@@ -506,7 +506,7 @@ body {
 /* - - - - - - - - Error Page - - - - - - - - */
 /* line 464, ../compass/sass/style.scss */
 #error-jumbotron {
-  background-image: url(/images/profile-bg-2.png);
+  background-image: url('/images/profile-bg-2.png');
 }
 
 /* line 468, ../compass/sass/style.scss */

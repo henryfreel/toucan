@@ -1,3 +1,13 @@
+CRITICAL PATH TO MVP
+ - Medium editor
+ - Browse projects page
+ - Project tags
+ - Sample Projects, Help young devs write cool projects
+
+
+
+
+
 Bugs
 	• "Log In" page not working for Henry locally
 	• Sign Up error states with help text (ADAM)

@@ -1,7 +1,8 @@
 var app = angular.module('tukanApp', ['ngRoute', 
                                       'ngMessages', 
                                       'satellizer',
-                                      'ngSanitize']);
+                                      'ngSanitize',
+                                      'angular-medium-editor']);
 
 app.config(['$routeProvider', '$locationProvider', '$authProvider', function ($routeProvider, $locationProvider, $authProvider) {
 
