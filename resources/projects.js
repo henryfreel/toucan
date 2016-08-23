@@ -76,15 +76,11 @@ module.exports = function(app) {
 
     // var targetProject = req.params.id;
 
-    Project.find(function (err, foundProjects) {
-
-      if (foundProjects) {
-
-        res.json(foundProjects);
-
+    Project.find().populate('user').exec(function (err, projects) {
+      if (projects) {
+        res.json(projects);
       } else {
         res.status(404).send('Sorry cant find that!');
-        // res.redirect('/views/404.html')
       }
 
     });
@@ -94,13 +90,9 @@ module.exports = function(app) {
   // Update Project
 
   app.put('/api/projects/:id/edit', function (req, res) {
-
     var targetProject = req.params.id;
-
     Project.findOne({_id: targetProject}, function (err, foundProject) {
-
       if (foundProject) {
-
         foundProject.title = req.body.title || foundProject.title;
         foundProject.liveUrl = req.body.liveUrl || foundProject.liveUrl;
         foundProject.summary = req.body.summary || foundProject.summary;

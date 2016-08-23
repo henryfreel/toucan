@@ -20,7 +20,7 @@
             a(href='javascript:void(0)') Recent
           li.secondary-navigation-item
             a(href='javascript:void(0)') Following
-//- .container.projects-container
+.container.projects-container
   .row.col-md-8.col-md-offset-2
     .project-preview-container(ng-repeat="project in projects | orderBy: '-likes' | limitTo:10")
       .project-preview-content
@@ -28,7 +28,8 @@
           a(href='/projects/{{ project._id }}')
             .project-preview-image(style='background-image: url(../images/{{ project.image }});')
         .project-preview-info
-          .project-preview-title(href='#') {{ project.title }}
+          a(href='/projects/{{ project._id }}')
+            .project-preview-title(href='#') {{ project.title }}
           .project-preview-summary(href='#') {{ project.summary }}
         .project-preview-metrics
           .project-preview-icon
@@ -39,5 +40,5 @@
             span.like-project-text {{ project.views }}
           .project-preview-user
             .project-preview-avatar(style='background-image: url(images/default.png);')
-            a(href='#')
-              .project-preview-username Username
+            a(href='/{{project.user.username}}')
+              .project-preview-username {{project.user.username}}

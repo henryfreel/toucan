@@ -9,7 +9,7 @@ var UserSchema = new mongoose.Schema({
   created_at: { type: Date, default: Date.now },
   updated_at: { type: Date, default: Date.now },
 
-  email: { type: String, unique: true, lowercase: true, required: true },
+  email: { type: String, unique: true, select: false, lowercase: true, required: true },
   password: { type: String, select: false, required: true },
   username: { type: String, unique: true, lowercase: true, required: true },
 

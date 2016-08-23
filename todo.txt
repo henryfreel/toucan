@@ -1,11 +1,10 @@
 CRITICAL PATH TO MVP
- - Medium editor
+ DONE - Medium editor
+ - New Project goes directly to medium editor and creates a draft
+ - Autosave medium editor
  - Browse projects page
- - Project tags
- - Sample Projects, Help young devs write cool projects
-
-
-
+ - Sample Projects, Help young devs write cool project descriptions
+ 
 
 
 Bugs

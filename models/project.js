@@ -20,11 +20,7 @@ var ProjectSchema = new mongoose.Schema({
   likes: { type: Number, default: 0},
   views: { type: Number, default: 0},
 
-  user: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
-      }
-
+  user: { type: Schema.Types.ObjectId, ref: 'User' }
 });
 
 // EXPORT USER MODEL
