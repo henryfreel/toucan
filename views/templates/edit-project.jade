@@ -1,42 +1,50 @@
 .container.project-view-container
   .row
-    .col-md-4.edit-panel
+    .col-md-8.col-md-offset-2
       form(ng-submit='updateProject(project)', name='EditProjectForm')
-        .form-group.has-feedback(ng-class="{ 'has-error' : EditProjectForm.title.$invalid && EditProjectForm.title.$dirty }")
-          label(for='title') Project Title
-          input.form-control.input(type='text', name='title', ng-model='project.title', placeholder='title', required='')
-          .help-block.text-danger(ng-if='EditProjectForm.title.$dirty', ng-messages='EditProjectForm.title.$error')
-            div(ng-message='required') You must enter your name.
-        .form-group.has-feedback(ng-class="{ 'has-error' : EditProjectForm.summary.$invalid && EditProjectForm.summary.$dirty }")
-          label(for='summary') Project Summary
-          textarea.form-control.input(type='text', name='summary', ng-model='project.summary', placeholder='Summary', required='')
-          .help-block.text-danger(ng-if='EditProjectForm.summary.$dirty', ng-messages='EditProjectForm.summary.$error')
-            div(ng-message='required') You must enter a summary.
-          //- .form-group.has-feedback(ng-class="{ 'has-error' : EditProjectForm.liveUrl.$invalid && EditProjectForm.liveUrl.$dirty }")
-          //-   input#liveUrl.form-control.input(type='liveUrl', name='liveUrl', ng-model='project.liveUrl', placeholder='Live URL')
-          //-   span.ion-at.form-control-feedback
-          //-   .help-block.text-danger(ng-if='EditProjectForm.liveUrl.$dirty', ng-messages='EditProjectForm.liveUrl.$error')
-          //-     div(ng-message='required') Your email address is required.
-          //-     div(ng-message='pattern') Your email address is invalid.
-        .row
-          .col-md-12
-            label(for='content') Project Content
-            textarea#inputText.form-control(name='content', ng-model='project.content', auto-grow='')
-          .col-md-6
-            #outputText(ng-bind-html='markedOnView(project.content)')
+        h3(medium-editor ng-model="project.title")
+        p.text-muted(medium-editor ng-model="project.summary")
+        .project-info-container
+          .project-view-item
+            .project-view-avatar(style='background-image: url(/images/henry.png);')
+            .project-view-username
+              a(href='javascript:void(0)') {{ project.user.username }}
+        p(medium-editor ng-model="project.content")
+    //-     .form-group.has-feedback(ng-class="{ 'has-error' : EditProjectForm.title.$invalid && EditProjectForm.title.$dirty }")
+    //-       label(for='title') Project Title
+    //-       input.form-control.input(type='text', name='title', ng-model='project.title', placeholder='title', required='')
+    //-       .help-block.text-danger(ng-if='EditProjectForm.title.$dirty', ng-messages='EditProjectForm.title.$error')
+    //-         div(ng-message='required') You must enter your name.
+    //-     .form-group.has-feedback(ng-class="{ 'has-error' : EditProjectForm.summary.$invalid && EditProjectForm.summary.$dirty }")
+    //-       label(for='summary') Project Summary
+    //-       textarea.form-control.input(type='text', name='summary', ng-model='project.summary', placeholder='Summary', required='')
+    //-       .help-block.text-danger(ng-if='EditProjectForm.summary.$dirty', ng-messages='EditProjectForm.summary.$error')
+    //-         div(ng-message='required') You must enter a summary.
+    //-       //- .form-group.has-feedback(ng-class="{ 'has-error' : EditProjectForm.liveUrl.$invalid && EditProjectForm.liveUrl.$dirty }")
+    //-       //-   input#liveUrl.form-control.input(type='liveUrl', name='liveUrl', ng-model='project.liveUrl', placeholder='Live URL')
+    //-       //-   span.ion-at.form-control-feedback
+    //-       //-   .help-block.text-danger(ng-if='EditProjectForm.liveUrl.$dirty', ng-messages='EditProjectForm.liveUrl.$error')
+    //-       //-     div(ng-message='required') Your email address is required.
+    //-       //-     div(ng-message='pattern') Your email address is invalid.
+    //-     .row
+    //-       .col-md-12
+    //-         label(for='content') Project Content
+    //-         textarea#inputText.form-control(name='content', ng-model='project.content', auto-grow='')
+    //-       .col-md-6
+    //-         #outputText(ng-bind-html='markedOnView(project.content)')
 
-        br
-        button.btn.btn-block.btn-primary(type='submit') Save Project
-        //- a.btn.btn-block.btn-danger(ng-click='deleteProject(project)', href='javascript:void(0)') Delete Project
-        a.btn.btn-block.btn-danger(confirmed-click='deleteProject(project)', ng-confirm-click='Are you sure you want to delete {{ project.title }}?', href='javascript:void(0)') Delete Project
-    .col-md-8
-      .project-view-title-container
-        .project-view-title {{ project.title }}
-        .project-view-summary {{ project.summary }}
-      .project-info-container
-        .project-view-item
-          .project-view-avatar(style='background-image: url(/images/henry.png);')
-          .project-view-username
-            a(href='javascript:void(0)') {{ project.user.username }}
-      hr
-      #project-content(ng-bind-html='markedOnView(project.content)')
+    //-     br
+    //-     button.btn.btn-block.btn-primary(type='submit') Save Project
+    //-     //- a.btn.btn-block.btn-danger(ng-click='deleteProject(project)', href='javascript:void(0)') Delete Project
+    //-     a.btn.btn-block.btn-danger(confirmed-click='deleteProject(project)', ng-confirm-click='Are you sure you want to delete {{ project.title }}?', href='javascript:void(0)') Delete Project
+    //- .col-md-8
+    //-   .project-view-title-container
+    //-     .project-view-title {{ project.title }}
+    //-     .project-view-summary {{ project.summary }}
+    //-   .project-info-container
+    //-     .project-view-item
+    //-       .project-view-avatar(style='background-image: url(/images/henry.png);')
+    //-       .project-view-username
+    //-         a(href='javascript:void(0)') {{ project.user.username }}
+    //-   hr
+    //-   #project-content(ng-bind-html='markedOnView(project.content)')

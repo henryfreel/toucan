@@ -7,9 +7,14 @@
     a.btn.btn-default.pull-left(ng-href='/{{ user.username }}/edit') Edit Profile
 div
   .container
-    .row.col-md-8.col-md-offset-2
-      .projects-container
-        .project-container(ng-repeat='project in projects')
-          .project-title
-            a(ng-href='/projects/{{ project._id }}') {{ project.title }}
-          .project-summary {{ project.summary }}
+    .row 
+      .col-md-10.col-md-offset-1.projects-container
+        .row
+          a(href='/projects/new').col-sm-4
+            .project-container
+              | New Project
+          .col-sm-4(ng-repeat='project in projects')
+            .project-container
+              .project-title
+                a(ng-href='/projects/{{ project._id }}') {{ project.title }}
+              .project-summary {{ project.summary }}
